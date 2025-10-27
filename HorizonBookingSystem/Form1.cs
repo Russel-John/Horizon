@@ -16,5 +16,10 @@ namespace HorizonBookingSystem
         {
             InitializeComponent();
         }
+
+        private void Loginpage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
