@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HorizonBookingSystem
 {
-    public partial class Form1 : Form
+    public partial class Loginpage : Form
     {
-        public Form1()
+        public Loginpage()
         {
             InitializeComponent();
         }
