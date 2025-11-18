@@ -151,6 +151,7 @@
             this.Controls.Add(this.UserLbl);
             this.Controls.Add(this.txtBoxUsername);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterPage";
             this.Text = "RegisterPage";
             this.Load += new System.EventHandler(this.RegisterPage_Load);
