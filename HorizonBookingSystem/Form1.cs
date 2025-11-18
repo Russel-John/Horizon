@@ -70,7 +70,9 @@ namespace HorizonBookingSystem
 
         private void linkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            RegisterPage registerPage = new RegisterPage();
+            registerPage.Show();
+            this.Hide();
         }
     }
 }
