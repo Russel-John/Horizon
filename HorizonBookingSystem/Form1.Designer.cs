@@ -123,6 +123,7 @@
             this.linkRegister.TabIndex = 6;
             this.linkRegister.TabStop = true;
             this.linkRegister.Text = "Register Now";
+            this.linkRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkRegister_LinkClicked);
             // 
             // lblRegister
             // 
