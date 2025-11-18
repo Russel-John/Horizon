@@ -30,7 +30,7 @@ namespace HorizonBookingSystem
             string username = txtBoxUsername.Text;
             string password = txtBoxPassword.Text;
 
-            // Query the database for a user with the provided username and password
+            // SELECT Users WHERE USERNAME = "name"
             var user = db.Users.Where(u => u.username.Equals(username)).FirstOrDefault();
 
             if (user == null)
@@ -49,7 +49,7 @@ namespace HorizonBookingSystem
             if (user != null)
             {
                 // Successful login
-                MessageBox.Show("Login successful!");
+                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // Open the main application form
                 HomePage homePage = new HomePage(user); // Pass the user object to the main form
                 homePage.Show();
