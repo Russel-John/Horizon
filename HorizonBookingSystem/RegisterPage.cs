@@ -41,7 +41,7 @@ namespace HorizonBookingSystem
                 username = txtBoxUsername.Text,
                 password = txtBoxPassword.Text, 
                 email = txtBoxEmail.Text,
-                roleID = 1
+                roleID = 2
             };
 
             if (string.IsNullOrWhiteSpace(txtBoxUsername.Text) &&
