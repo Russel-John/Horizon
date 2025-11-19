@@ -153,6 +153,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterPage";
             this.Load += new System.EventHandler(this.RegisterPage_Load);
             this.ResumeLayout(false);
