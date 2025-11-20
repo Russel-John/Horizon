@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
-            this.topPanel = new System.Windows.Forms.Panel();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // topPanel
+            // panelMenu
             // 
-            this.topPanel.BackColor = System.Drawing.Color.DarkBlue;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(799, 41);
-            this.topPanel.TabIndex = 0;
+            this.panelMenu.BackColor = System.Drawing.Color.DarkBlue;
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(59, 450);
+            this.panelMenu.TabIndex = 0;
             // 
             // HomePage
             // 
@@ -46,7 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomePage";
@@ -59,6 +60,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.Panel panelMenu;
     }
 }
