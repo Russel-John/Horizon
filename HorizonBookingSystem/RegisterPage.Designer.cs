@@ -124,7 +124,8 @@
             this.Registerbtn.BackColor = System.Drawing.Color.SteelBlue;
             this.Registerbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Registerbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Registerbtn.FlatAppearance.BorderSize = 0;
+            this.Registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Registerbtn.Font = new System.Drawing.Font("Cascadia Mono", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registerbtn.ForeColor = System.Drawing.Color.White;
             this.Registerbtn.Location = new System.Drawing.Point(257, 333);

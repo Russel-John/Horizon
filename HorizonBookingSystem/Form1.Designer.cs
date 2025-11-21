@@ -89,7 +89,8 @@
             this.Loginbtn.BackColor = System.Drawing.Color.SteelBlue;
             this.Loginbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Loginbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Loginbtn.FlatAppearance.BorderSize = 0;
+            this.Loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Loginbtn.Font = new System.Drawing.Font("Cascadia Mono", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Loginbtn.ForeColor = System.Drawing.Color.White;
             this.Loginbtn.Location = new System.Drawing.Point(260, 269);
