@@ -26,9 +26,10 @@ namespace HorizonBookingSystem
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
-            ProfilePage profilePage = new ProfilePage();
+            ProfilePage profilePage = new ProfilePage(UserloggedIn); // Pass the user object
             profilePage.Show();
             this.Hide();
+
         }
     }
 }
