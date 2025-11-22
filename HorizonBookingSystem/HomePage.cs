@@ -23,5 +23,12 @@ namespace HorizonBookingSystem
         {
 
         }
+
+        private void ProfileButton_Click(object sender, EventArgs e)
+        {
+            ProfilePage profilePage = new ProfilePage();
+            profilePage.Show();
+            this.Hide();
+        }
     }
 }
