@@ -23,9 +23,16 @@ namespace HorizonBookingSystem
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-
+            var homeview = new Homeview(UserloggedIn);
+            OpenChildForm(homeview, GetActiveChildForm());
         }
-        private void OpenChildForm(Form child)
+
+        private object GetActiveChildForm()
+        {
+            return activeChildForm;
+        }
+
+        private void OpenChildForm(Form child, object v)
         {
             // Close existing child
             if (activeChildForm != null)
@@ -50,11 +57,12 @@ namespace HorizonBookingSystem
             child.BringToFront();
             child.Show();
         }
+
         private void ProfileButton_Click(object sender, EventArgs e)
         {
             // Create ProfilePage with the logged in user and display it inside DesktopPanel
             var profilePage = new ProfilePage(UserloggedIn);
-            OpenChildForm(profilePage);
+            OpenChildForm(profilePage, GetActiveChildForm());
         }
 
         private void DesktopPanel_Paint(object sender, PaintEventArgs e)
@@ -65,7 +73,7 @@ namespace HorizonBookingSystem
         private void FlightsButton_Click(object sender, EventArgs e)
         {
             var flightPage = new FlightPage(UserloggedIn);
-            OpenChildForm(flightPage);
+            OpenChildForm(flightPage, GetActiveChildForm());
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
@@ -78,7 +86,7 @@ namespace HorizonBookingSystem
         private void HomeButton_Click(object sender, EventArgs e)
         {
             var homeview = new Homeview(UserloggedIn);
-            OpenChildForm(homeview);
+            OpenChildForm(homeview, GetActiveChildForm());
         }
     }
 }

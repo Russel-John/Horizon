@@ -40,61 +40,72 @@
             // Usernamelbl
             // 
             this.Usernamelbl.AutoSize = true;
-            this.Usernamelbl.Location = new System.Drawing.Point(204, 104);
+            this.Usernamelbl.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Usernamelbl.Location = new System.Drawing.Point(93, 112);
             this.Usernamelbl.Name = "Usernamelbl";
-            this.Usernamelbl.Size = new System.Drawing.Size(55, 13);
+            this.Usernamelbl.Size = new System.Drawing.Size(71, 19);
             this.Usernamelbl.TabIndex = 0;
             this.Usernamelbl.Text = "Username";
             // 
             // Passlbl
             // 
             this.Passlbl.AutoSize = true;
-            this.Passlbl.Location = new System.Drawing.Point(204, 142);
+            this.Passlbl.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Passlbl.Location = new System.Drawing.Point(97, 150);
             this.Passlbl.Name = "Passlbl";
-            this.Passlbl.Size = new System.Drawing.Size(53, 13);
+            this.Passlbl.Size = new System.Drawing.Size(67, 19);
             this.Passlbl.TabIndex = 1;
             this.Passlbl.Text = "Password";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(280, 237);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(239)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(190, 233);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(102, 31);
             this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Text = "Save Changes";
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 182);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.Location = new System.Drawing.Point(123, 184);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(41, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Email";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(265, 101);
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtUsername.Location = new System.Drawing.Point(170, 109);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(155, 20);
+            this.txtUsername.Size = new System.Drawing.Size(155, 25);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(265, 142);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPassword.Location = new System.Drawing.Point(170, 147);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(155, 20);
+            this.txtPassword.Size = new System.Drawing.Size(155, 25);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(265, 175);
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtEmail.Location = new System.Drawing.Point(170, 181);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(155, 20);
+            this.txtEmail.Size = new System.Drawing.Size(155, 25);
             this.txtEmail.TabIndex = 6;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
