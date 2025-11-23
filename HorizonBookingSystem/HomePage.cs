@@ -13,6 +13,8 @@ namespace HorizonBookingSystem
     public partial class HomePage : Form
     {
         private Users UserloggedIn;
+        private object activeChildForm;
+
         public HomePage(Users userloggedIn)
         {
             InitializeComponent();
@@ -23,13 +25,60 @@ namespace HorizonBookingSystem
         {
 
         }
+        private void OpenChildForm(Form child)
+        {
+            // Close existing child
+            if (activeChildForm != null)
+            {
+                // Remove and dispose previous form
+                DesktopPanel.Controls.Remove((Control)activeChildForm);
+                var previousForm = activeChildForm as Form;
+                if (previousForm != null)
+                {
+                    previousForm.Close();
+                    previousForm.Dispose();
+                }
+                activeChildForm = null;
+            }
 
+            activeChildForm = child;
+            child.TopLevel = false; // make it a control of the parent form
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.Dock = DockStyle.Fill;
+            DesktopPanel.Controls.Add(child);
+            DesktopPanel.Tag = child;
+            child.BringToFront();
+            child.Show();
+        }
         private void ProfileButton_Click(object sender, EventArgs e)
         {
-            ProfilePage profilePage = new ProfilePage(UserloggedIn); // Pass the user object
-            profilePage.Show();
-            this.Hide();
+            // Create ProfilePage with the logged in user and display it inside DesktopPanel
+            var profilePage = new ProfilePage(UserloggedIn);
+            OpenChildForm(profilePage);
+        }
 
+        private void DesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FlightsButton_Click(object sender, EventArgs e)
+        {
+            var flightPage = new FlightPage(UserloggedIn);
+            OpenChildForm(flightPage);
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Loginpage logpage = new Loginpage();
+            logpage.Show();
+            this.Close();
+        }
+
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            var homeview = new Homeview(UserloggedIn);
+            OpenChildForm(homeview);
         }
     }
 }

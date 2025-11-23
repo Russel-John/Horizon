@@ -36,7 +36,6 @@
             this.ProfileButton = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TitlePanel = new System.Windows.Forms.Panel();
             this.DesktopPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,6 +75,7 @@
             this.LogoutButton.Text = "Log Out";
             this.LogoutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // FlightsButton
             // 
@@ -96,6 +96,7 @@
             this.FlightsButton.Text = "Flights";
             this.FlightsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.FlightsButton.UseVisualStyleBackColor = true;
+            this.FlightsButton.Click += new System.EventHandler(this.FlightsButton_Click);
             // 
             // HomeButton
             // 
@@ -116,6 +117,7 @@
             this.HomeButton.Text = "Home";
             this.HomeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.HomeButton.UseVisualStyleBackColor = true;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // ProfileButton
             // 
@@ -157,21 +159,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // TitlePanel
-            // 
-            this.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TitlePanel.Location = new System.Drawing.Point(186, 0);
-            this.TitlePanel.Name = "TitlePanel";
-            this.TitlePanel.Size = new System.Drawing.Size(614, 71);
-            this.TitlePanel.TabIndex = 1;
-            // 
             // DesktopPanel
             // 
             this.DesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DesktopPanel.Location = new System.Drawing.Point(186, 71);
+            this.DesktopPanel.Location = new System.Drawing.Point(186, 0);
             this.DesktopPanel.Name = "DesktopPanel";
-            this.DesktopPanel.Size = new System.Drawing.Size(614, 379);
+            this.DesktopPanel.Size = new System.Drawing.Size(614, 450);
             this.DesktopPanel.TabIndex = 2;
+            this.DesktopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DesktopPanel_Paint);
             // 
             // HomePage
             // 
@@ -180,7 +175,6 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DesktopPanel);
-            this.Controls.Add(this.TitlePanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -204,7 +198,6 @@
         private FontAwesome.Sharp.IconButton HomeButton;
         private FontAwesome.Sharp.IconButton LogoutButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel TitlePanel;
         private System.Windows.Forms.Panel DesktopPanel;
     }
 }

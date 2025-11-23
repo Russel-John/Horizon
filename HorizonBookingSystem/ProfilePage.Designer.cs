@@ -113,7 +113,7 @@
             this.Controls.Add(this.Usernamelbl);
             this.Name = "ProfilePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProfilePage";
+            this.Text = "Profile Page";
             this.Load += new System.EventHandler(this.ProfilePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
