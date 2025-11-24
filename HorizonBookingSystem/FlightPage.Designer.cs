@@ -112,6 +112,7 @@
             this.cmBoxFrom.Name = "cmBoxFrom";
             this.cmBoxFrom.Size = new System.Drawing.Size(121, 21);
             this.cmBoxFrom.TabIndex = 3;
+            this.cmBoxFrom.SelectedIndexChanged += new System.EventHandler(this.cmBoxFrom_SelectedIndexChanged);
             // 
             // cmBoxTo
             // 
