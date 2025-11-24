@@ -40,18 +40,18 @@
             this.cmBoxSort = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bookingDBDataSet = new HorizonBookingSystem.BookingDBDataSet();
-            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.flightsTableAdapter = new HorizonBookingSystem.BookingDBDataSetTableAdapters.FlightsTableAdapter();
             this.departureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingDBDataSet = new HorizonBookingSystem.BookingDBDataSet();
+            this.flightsTableAdapter = new HorizonBookingSystem.BookingDBDataSetTableAdapters.FlightsTableAdapter();
             this.btnBook = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -178,6 +178,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
@@ -190,46 +192,51 @@
             this.dataGridView1.DataSource = this.flightsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(19, 172);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(544, 150);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(544, 182);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // bookingDBDataSet
-            // 
-            this.bookingDBDataSet.DataSetName = "BookingDBDataSet";
-            this.bookingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // flightsBindingSource
-            // 
-            this.flightsBindingSource.DataMember = "Flights";
-            this.flightsBindingSource.DataSource = this.bookingDBDataSet;
-            // 
-            // flightsTableAdapter
-            // 
-            this.flightsTableAdapter.ClearBeforeFill = true;
             // 
             // departureDataGridViewTextBoxColumn
             // 
             this.departureDataGridViewTextBoxColumn.DataPropertyName = "Departure";
             this.departureDataGridViewTextBoxColumn.HeaderText = "Departure";
             this.departureDataGridViewTextBoxColumn.Name = "departureDataGridViewTextBoxColumn";
+            this.departureDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // destinationDataGridViewTextBoxColumn
             // 
             this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
             this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
             this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
+            this.destinationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // flightDateDataGridViewTextBoxColumn
             // 
             this.flightDateDataGridViewTextBoxColumn.DataPropertyName = "FlightDate";
             this.flightDateDataGridViewTextBoxColumn.HeaderText = "FlightDate";
             this.flightDateDataGridViewTextBoxColumn.Name = "flightDateDataGridViewTextBoxColumn";
+            this.flightDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // flightTimeDataGridViewTextBoxColumn
             // 
             this.flightTimeDataGridViewTextBoxColumn.DataPropertyName = "FlightTime";
             this.flightTimeDataGridViewTextBoxColumn.HeaderText = "FlightTime";
             this.flightTimeDataGridViewTextBoxColumn.Name = "flightTimeDataGridViewTextBoxColumn";
+            this.flightTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // flightsBindingSource
+            // 
+            this.flightsBindingSource.DataMember = "Flights";
+            this.flightsBindingSource.DataSource = this.bookingDBDataSet;
+            // 
+            // bookingDBDataSet
+            // 
+            this.bookingDBDataSet.DataSetName = "BookingDBDataSet";
+            this.bookingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // flightsTableAdapter
+            // 
+            this.flightsTableAdapter.ClearBeforeFill = true;
             // 
             // btnBook
             // 
@@ -267,8 +274,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

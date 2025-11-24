@@ -21,6 +21,11 @@ namespace HorizonBookingSystem
 
         private void Homeview_Load(object sender, EventArgs e)
         {
+            label1.Text = $"Welcome, {(UserloggedIn?.username)}";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
