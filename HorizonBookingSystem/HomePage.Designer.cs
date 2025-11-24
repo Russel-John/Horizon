@@ -61,7 +61,7 @@
             this.LogoutButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoutButton.FlatAppearance.BorderSize = 0;
             this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogoutButton.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutButton.ForeColor = System.Drawing.Color.White;
             this.LogoutButton.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.LogoutButton.IconColor = System.Drawing.Color.White;
@@ -82,7 +82,7 @@
             this.FlightsButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.FlightsButton.FlatAppearance.BorderSize = 0;
             this.FlightsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FlightsButton.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FlightsButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FlightsButton.ForeColor = System.Drawing.Color.White;
             this.FlightsButton.IconChar = FontAwesome.Sharp.IconChar.Plane;
             this.FlightsButton.IconColor = System.Drawing.Color.White;
@@ -103,7 +103,7 @@
             this.HomeButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.HomeButton.FlatAppearance.BorderSize = 0;
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HomeButton.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomeButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeButton.ForeColor = System.Drawing.Color.White;
             this.HomeButton.IconChar = FontAwesome.Sharp.IconChar.House;
             this.HomeButton.IconColor = System.Drawing.Color.White;
@@ -124,7 +124,7 @@
             this.ProfileButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ProfileButton.FlatAppearance.BorderSize = 0;
             this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProfileButton.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileButton.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileButton.ForeColor = System.Drawing.Color.White;
             this.ProfileButton.IconChar = FontAwesome.Sharp.IconChar.Person;
             this.ProfileButton.IconColor = System.Drawing.Color.White;

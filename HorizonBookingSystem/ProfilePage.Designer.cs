@@ -40,20 +40,20 @@
             // Usernamelbl
             // 
             this.Usernamelbl.AutoSize = true;
-            this.Usernamelbl.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Usernamelbl.Location = new System.Drawing.Point(93, 112);
+            this.Usernamelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Usernamelbl.Location = new System.Drawing.Point(145, 117);
             this.Usernamelbl.Name = "Usernamelbl";
-            this.Usernamelbl.Size = new System.Drawing.Size(71, 19);
+            this.Usernamelbl.Size = new System.Drawing.Size(69, 17);
             this.Usernamelbl.TabIndex = 0;
             this.Usernamelbl.Text = "Username";
             // 
             // Passlbl
             // 
             this.Passlbl.AutoSize = true;
-            this.Passlbl.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Passlbl.Location = new System.Drawing.Point(97, 150);
+            this.Passlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passlbl.Location = new System.Drawing.Point(149, 155);
             this.Passlbl.Name = "Passlbl";
-            this.Passlbl.Size = new System.Drawing.Size(67, 19);
+            this.Passlbl.Size = new System.Drawing.Size(66, 17);
             this.Passlbl.TabIndex = 1;
             this.Passlbl.Text = "Password";
             // 
@@ -64,7 +64,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(190, 233);
+            this.btnSave.Location = new System.Drawing.Point(242, 238);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 31);
             this.btnSave.TabIndex = 2;
@@ -75,17 +75,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(123, 184);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(175, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 19);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Email";
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtUsername.Location = new System.Drawing.Point(170, 109);
+            this.txtUsername.Location = new System.Drawing.Point(222, 114);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(155, 25);
             this.txtUsername.TabIndex = 4;
@@ -94,7 +94,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPassword.Location = new System.Drawing.Point(170, 147);
+            this.txtPassword.Location = new System.Drawing.Point(222, 152);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(155, 25);
             this.txtPassword.TabIndex = 5;
@@ -103,7 +103,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtEmail.Location = new System.Drawing.Point(170, 181);
+            this.txtEmail.Location = new System.Drawing.Point(222, 186);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(155, 25);
             this.txtEmail.TabIndex = 6;
@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(598, 411);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);

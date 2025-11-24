@@ -60,6 +60,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookingDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FlightPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +158,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="BookingDBDataSet.xsc">
+      <DependentUpon>BookingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookingDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookingDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookingDBDataSet.xss">
+      <DependentUpon>BookingDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

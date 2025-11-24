@@ -27,6 +27,8 @@ namespace HorizonBookingSystem
 
         private void FlightPage_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bookingDBDataSet.Flights' table. You can move, or remove it, as needed.
+            this.flightsTableAdapter.Fill(this.bookingDBDataSet.Flights);
 
         }
     }
