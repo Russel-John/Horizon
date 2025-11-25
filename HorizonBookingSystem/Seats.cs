@@ -12,20 +12,20 @@ namespace HorizonBookingSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Seats
     {
-        public Users()
+        public Seats()
         {
-            this.Bookings = new HashSet<Bookings>();
+            this.BookingSeats = new HashSet<BookingSeats>();
         }
     
-        public int userID { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
-        public int roleID { get; set; }
+        public int SeatID { get; set; }
+        public Nullable<int> FlightID { get; set; }
+        public string SeatNumber { get; set; }
+        public Nullable<bool> IsBooked { get; set; }
+        public Nullable<int> BookingID { get; set; }
     
-        public virtual Roles Roles { get; set; }
-        public virtual ICollection<Bookings> Bookings { get; set; }
+        public virtual ICollection<BookingSeats> BookingSeats { get; set; }
+        public virtual Flights Flights { get; set; }
     }
 }

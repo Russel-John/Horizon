@@ -281,8 +281,6 @@ namespace HorizonBookingSystem {
             
             private global::System.Data.DataColumn columnFlightID;
             
-            private global::System.Data.DataColumn columnFlightCode;
-            
             private global::System.Data.DataColumn columnDeparture;
             
             private global::System.Data.DataColumn columnDestination;
@@ -291,7 +289,7 @@ namespace HorizonBookingSystem {
             
             private global::System.Data.DataColumn columnFlightTime;
             
-            private global::System.Data.DataColumn columnSeatCapacity;
+            private global::System.Data.DataColumn columnPrice;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
@@ -336,14 +334,6 @@ namespace HorizonBookingSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn FlightCodeColumn {
-                get {
-                    return this.columnFlightCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public global::System.Data.DataColumn DepartureColumn {
                 get {
                     return this.columnDeparture;
@@ -376,9 +366,9 @@ namespace HorizonBookingSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn SeatCapacityColumn {
+            public global::System.Data.DataColumn PriceColumn {
                 get {
-                    return this.columnSeatCapacity;
+                    return this.columnPrice;
                 }
             }
             
@@ -419,16 +409,15 @@ namespace HorizonBookingSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public FlightsRow AddFlightsRow(string FlightCode, string Departure, string Destination, System.DateTime FlightDate, string FlightTime, int SeatCapacity) {
+            public FlightsRow AddFlightsRow(string Departure, string Destination, System.DateTime FlightDate, string FlightTime, decimal Price) {
                 FlightsRow rowFlightsRow = ((FlightsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        FlightCode,
                         Departure,
                         Destination,
                         FlightDate,
                         FlightTime,
-                        SeatCapacity};
+                        Price};
                 rowFlightsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFlightsRow);
                 return rowFlightsRow;
@@ -459,12 +448,11 @@ namespace HorizonBookingSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             internal void InitVars() {
                 this.columnFlightID = base.Columns["FlightID"];
-                this.columnFlightCode = base.Columns["FlightCode"];
                 this.columnDeparture = base.Columns["Departure"];
                 this.columnDestination = base.Columns["Destination"];
                 this.columnFlightDate = base.Columns["FlightDate"];
                 this.columnFlightTime = base.Columns["FlightTime"];
-                this.columnSeatCapacity = base.Columns["SeatCapacity"];
+                this.columnPrice = base.Columns["Price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -472,8 +460,6 @@ namespace HorizonBookingSystem {
             private void InitClass() {
                 this.columnFlightID = new global::System.Data.DataColumn("FlightID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFlightID);
-                this.columnFlightCode = new global::System.Data.DataColumn("FlightCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFlightCode);
                 this.columnDeparture = new global::System.Data.DataColumn("Departure", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeparture);
                 this.columnDestination = new global::System.Data.DataColumn("Destination", typeof(string), null, global::System.Data.MappingType.Element);
@@ -482,8 +468,8 @@ namespace HorizonBookingSystem {
                 base.Columns.Add(this.columnFlightDate);
                 this.columnFlightTime = new global::System.Data.DataColumn("FlightTime", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFlightTime);
-                this.columnSeatCapacity = new global::System.Data.DataColumn("SeatCapacity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSeatCapacity);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnFlightID}, true));
                 this.columnFlightID.AutoIncrement = true;
@@ -492,7 +478,6 @@ namespace HorizonBookingSystem {
                 this.columnFlightID.AllowDBNull = false;
                 this.columnFlightID.ReadOnly = true;
                 this.columnFlightID.Unique = true;
-                this.columnFlightCode.MaxLength = 20;
                 this.columnDeparture.MaxLength = 100;
                 this.columnDestination.MaxLength = 100;
                 this.columnFlightTime.MaxLength = 20;
@@ -649,22 +634,6 @@ namespace HorizonBookingSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string FlightCode {
-                get {
-                    try {
-                        return ((string)(this[this.tableFlights.FlightCodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FlightCode\' in table \'Flights\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFlights.FlightCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string Departure {
                 get {
                     try {
@@ -729,30 +698,18 @@ namespace HorizonBookingSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public int SeatCapacity {
+            public decimal Price {
                 get {
                     try {
-                        return ((int)(this[this.tableFlights.SeatCapacityColumn]));
+                        return ((decimal)(this[this.tableFlights.PriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SeatCapacity\' in table \'Flights\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'Flights\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableFlights.SeatCapacityColumn] = value;
+                    this[this.tableFlights.PriceColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsFlightCodeNull() {
-                return this.IsNull(this.tableFlights.FlightCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetFlightCodeNull() {
-                this[this.tableFlights.FlightCodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -805,14 +762,14 @@ namespace HorizonBookingSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsSeatCapacityNull() {
-                return this.IsNull(this.tableFlights.SeatCapacityColumn);
+            public bool IsPriceNull() {
+                return this.IsNull(this.tableFlights.PriceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetSeatCapacityNull() {
-                this[this.tableFlights.SeatCapacityColumn] = global::System.Convert.DBNull;
+            public void SetPriceNull() {
+                this[this.tableFlights.PriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -976,20 +933,17 @@ namespace HorizonBookingSystem.BookingDBDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Flights";
             tableMapping.ColumnMappings.Add("FlightID", "FlightID");
-            tableMapping.ColumnMappings.Add("FlightCode", "FlightCode");
             tableMapping.ColumnMappings.Add("Departure", "Departure");
             tableMapping.ColumnMappings.Add("Destination", "Destination");
             tableMapping.ColumnMappings.Add("FlightDate", "FlightDate");
             tableMapping.ColumnMappings.Add("FlightTime", "FlightTime");
-            tableMapping.ColumnMappings.Add("SeatCapacity", "SeatCapacity");
+            tableMapping.ColumnMappings.Add("Price", "Price");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Flights] WHERE (([FlightID] = @Original_FlightID) AND ((@IsNull_FlightCode = 1 AND [FlightCode] IS NULL) OR ([FlightCode] = @Original_FlightCode)) AND ((@IsNull_Departure = 1 AND [Departure] IS NULL) OR ([Departure] = @Original_Departure)) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_FlightDate = 1 AND [FlightDate] IS NULL) OR ([FlightDate] = @Original_FlightDate)) AND ((@IsNull_FlightTime = 1 AND [FlightTime] IS NULL) OR ([FlightTime] = @Original_FlightTime)) AND ((@IsNull_SeatCapacity = 1 AND [SeatCapacity] IS NULL) OR ([SeatCapacity] = @Original_SeatCapacity)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Flights] WHERE (([FlightID] = @Original_FlightID) AND ((@IsNull_Departure = 1 AND [Departure] IS NULL) OR ([Departure] = @Original_Departure)) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_FlightDate = 1 AND [FlightDate] IS NULL) OR ([FlightDate] = @Original_FlightDate)) AND ((@IsNull_FlightTime = 1 AND [FlightTime] IS NULL) OR ([FlightTime] = @Original_FlightTime)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FlightCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightCode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightCode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Departure", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Departure", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Departure", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Departure", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Destination", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -998,33 +952,29 @@ namespace HorizonBookingSystem.BookingDBDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FlightTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SeatCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatCapacity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeatCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatCapacity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Flights] ([FlightCode], [Departure], [Destination], [FlightDate], [FlightTime], [SeatCapacity]) VALUES (@FlightCode, @Departure, @Destination, @FlightDate, @FlightTime, @SeatCapacity);
-SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, SeatCapacity FROM Flights WHERE (FlightID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Flights] ([Departure], [Destination], [FlightDate], [FlightTime], [Price]) VALUES (@Departure, @Destination, @FlightDate, @FlightTime, @Price);
+SELECT FlightID, Departure, Destination, FlightDate, FlightTime, Price FROM Flights WHERE (FlightID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightCode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Departure", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Departure", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeatCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatCapacity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Flights] SET [FlightCode] = @FlightCode, [Departure] = @Departure, [Destination] = @Destination, [FlightDate] = @FlightDate, [FlightTime] = @FlightTime, [SeatCapacity] = @SeatCapacity WHERE (([FlightID] = @Original_FlightID) AND ((@IsNull_FlightCode = 1 AND [FlightCode] IS NULL) OR ([FlightCode] = @Original_FlightCode)) AND ((@IsNull_Departure = 1 AND [Departure] IS NULL) OR ([Departure] = @Original_Departure)) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_FlightDate = 1 AND [FlightDate] IS NULL) OR ([FlightDate] = @Original_FlightDate)) AND ((@IsNull_FlightTime = 1 AND [FlightTime] IS NULL) OR ([FlightTime] = @Original_FlightTime)) AND ((@IsNull_SeatCapacity = 1 AND [SeatCapacity] IS NULL) OR ([SeatCapacity] = @Original_SeatCapacity)));
-SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, SeatCapacity FROM Flights WHERE (FlightID = @FlightID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Flights] SET [Departure] = @Departure, [Destination] = @Destination, [FlightDate] = @FlightDate, [FlightTime] = @FlightTime, [Price] = @Price WHERE (([FlightID] = @Original_FlightID) AND ((@IsNull_Departure = 1 AND [Departure] IS NULL) OR ([Departure] = @Original_Departure)) AND ((@IsNull_Destination = 1 AND [Destination] IS NULL) OR ([Destination] = @Original_Destination)) AND ((@IsNull_FlightDate = 1 AND [FlightDate] IS NULL) OR ([FlightDate] = @Original_FlightDate)) AND ((@IsNull_FlightTime = 1 AND [FlightTime] IS NULL) OR ([FlightTime] = @Original_FlightTime)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)));
+SELECT FlightID, Departure, Destination, FlightDate, FlightTime, Price FROM Flights WHERE (FlightID = @FlightID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightCode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Departure", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Departure", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destination", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeatCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatCapacity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FlightCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightCode", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightCode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Departure", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Departure", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Departure", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Departure", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Destination", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destination", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1033,8 +983,8 @@ SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, Sea
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FlightTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FlightTime", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FlightTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SeatCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatCapacity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeatCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeatCapacity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FlightID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FlightID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1051,8 +1001,8 @@ SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, Sea
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, Seat" +
-                "Capacity FROM dbo.Flights";
+            this._commandCollection[0].CommandText = "SELECT FlightID, Departure, Destination, FlightDate, FlightTime, Price FROM dbo.F" +
+                "lights";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1113,55 +1063,47 @@ SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, Sea
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_FlightID, string Original_FlightCode, string Original_Departure, string Original_Destination, global::System.Nullable<global::System.DateTime> Original_FlightDate, string Original_FlightTime, global::System.Nullable<int> Original_SeatCapacity) {
+        public virtual int Delete(int Original_FlightID, string Original_Departure, string Original_Destination, global::System.Nullable<global::System.DateTime> Original_FlightDate, string Original_FlightTime, global::System.Nullable<decimal> Original_Price) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_FlightID));
-            if ((Original_FlightCode == null)) {
+            if ((Original_Departure == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_FlightCode));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Departure));
             }
-            if ((Original_Departure == null)) {
+            if ((Original_Destination == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Departure));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Destination));
             }
-            if ((Original_Destination == null)) {
+            if ((Original_FlightDate.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_FlightDate.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Destination));
-            }
-            if ((Original_FlightDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_FlightDate.Value));
-            }
-            else {
+            if ((Original_FlightTime == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_FlightTime == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_FlightTime));
+            }
+            if ((Original_Price.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Price.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_FlightTime));
-            }
-            if ((Original_SeatCapacity.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_SeatCapacity.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1183,42 +1125,36 @@ SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, Sea
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string FlightCode, string Departure, string Destination, global::System.Nullable<global::System.DateTime> FlightDate, string FlightTime, global::System.Nullable<int> SeatCapacity) {
-            if ((FlightCode == null)) {
+        public virtual int Insert(string Departure, string Destination, global::System.Nullable<global::System.DateTime> FlightDate, string FlightTime, global::System.Nullable<decimal> Price) {
+            if ((Departure == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(FlightCode));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Departure));
             }
-            if ((Departure == null)) {
+            if ((Destination == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Departure));
-            }
-            if ((Destination == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Destination));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Destination));
             }
             if ((FlightDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(FlightDate.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(FlightDate.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((FlightTime == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FlightTime));
+            }
+            if ((Price.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(Price.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FlightTime));
-            }
-            if ((SeatCapacity.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(SeatCapacity.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1240,93 +1176,79 @@ SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, Sea
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FlightCode, string Departure, string Destination, global::System.Nullable<global::System.DateTime> FlightDate, string FlightTime, global::System.Nullable<int> SeatCapacity, int Original_FlightID, string Original_FlightCode, string Original_Departure, string Original_Destination, global::System.Nullable<global::System.DateTime> Original_FlightDate, string Original_FlightTime, global::System.Nullable<int> Original_SeatCapacity, int FlightID) {
-            if ((FlightCode == null)) {
+        public virtual int Update(string Departure, string Destination, global::System.Nullable<global::System.DateTime> FlightDate, string FlightTime, global::System.Nullable<decimal> Price, int Original_FlightID, string Original_Departure, string Original_Destination, global::System.Nullable<global::System.DateTime> Original_FlightDate, string Original_FlightTime, global::System.Nullable<decimal> Original_Price, int FlightID) {
+            if ((Departure == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(FlightCode));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Departure));
             }
-            if ((Departure == null)) {
+            if ((Destination == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Departure));
-            }
-            if ((Destination == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Destination));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Destination));
             }
             if ((FlightDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(FlightDate.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(FlightDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((FlightTime == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FlightTime));
+            }
+            if ((Price.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Price.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FlightTime));
-            }
-            if ((SeatCapacity.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(SeatCapacity.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_FlightID));
-            if ((Original_FlightCode == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_FlightCode));
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_FlightID));
             if ((Original_Departure == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Departure));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Departure));
             }
             if ((Original_Destination == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Destination));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Destination));
             }
             if ((Original_FlightDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_FlightDate.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_FlightDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_FlightTime == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_FlightTime));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_FlightTime));
             }
-            if ((Original_SeatCapacity.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_SeatCapacity.Value));
+            if ((Original_Price.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_Price.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(FlightID));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(FlightID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1347,8 +1269,8 @@ SELECT FlightID, FlightCode, Departure, Destination, FlightDate, FlightTime, Sea
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FlightCode, string Departure, string Destination, global::System.Nullable<global::System.DateTime> FlightDate, string FlightTime, global::System.Nullable<int> SeatCapacity, int Original_FlightID, string Original_FlightCode, string Original_Departure, string Original_Destination, global::System.Nullable<global::System.DateTime> Original_FlightDate, string Original_FlightTime, global::System.Nullable<int> Original_SeatCapacity) {
-            return this.Update(FlightCode, Departure, Destination, FlightDate, FlightTime, SeatCapacity, Original_FlightID, Original_FlightCode, Original_Departure, Original_Destination, Original_FlightDate, Original_FlightTime, Original_SeatCapacity, Original_FlightID);
+        public virtual int Update(string Departure, string Destination, global::System.Nullable<global::System.DateTime> FlightDate, string FlightTime, global::System.Nullable<decimal> Price, int Original_FlightID, string Original_Departure, string Original_Destination, global::System.Nullable<global::System.DateTime> Original_FlightDate, string Original_FlightTime, global::System.Nullable<decimal> Original_Price) {
+            return this.Update(Departure, Destination, FlightDate, FlightTime, Price, Original_FlightID, Original_Departure, Original_Destination, Original_FlightDate, Original_FlightTime, Original_Price, Original_FlightID);
         }
     }
     

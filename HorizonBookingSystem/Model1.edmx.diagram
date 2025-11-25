@@ -9,6 +9,15 @@
         <EntityTypeShape EntityType="BookingDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookingDBModel.Users" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="BookingDBModel.FK__Users__roleID__4BAC3F29" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BookingDBModel.Bookings" Width="1.5" PointX="5.625" PointY="3.75" />
+        <EntityTypeShape EntityType="BookingDBModel.BookingSeats" Width="1.5" PointX="7.875" PointY="7.25" />
+        <EntityTypeShape EntityType="BookingDBModel.Flights" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="BookingDBModel.Seats" Width="1.5" PointX="5.625" PointY="10.375" />
+        <AssociationConnector Association="BookingDBModel.FK__Bookings__Flight__6383C8BA" />
+        <AssociationConnector Association="BookingDBModel.FK__Bookings__UserID__628FA481" />
+        <AssociationConnector Association="BookingDBModel.FK__BookingSe__Booki__6754599E" />
+        <AssociationConnector Association="BookingDBModel.FK__BookingSe__SeatI__68487DD7" />
+        <AssociationConnector Association="BookingDBModel.FK__Seats__FlightID__5EBF139D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

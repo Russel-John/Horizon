@@ -45,7 +45,7 @@ namespace HorizonBookingSystem
 
         private void cmBoxFrom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // no-op
+            
         }
 
         private void CmBoxSort_SelectedIndexChanged(object sender, EventArgs e)

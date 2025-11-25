@@ -28,5 +28,9 @@ namespace HorizonBookingSystem
         public DbSet<Roles> Roles { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Users> Users { get; set; }
+        public DbSet<Bookings> Bookings { get; set; }
+        public DbSet<BookingSeats> BookingSeats { get; set; }
+        public DbSet<Flights> Flights { get; set; }
+        public DbSet<Seats> Seats { get; set; }
     }
 }

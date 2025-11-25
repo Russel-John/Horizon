@@ -71,11 +71,20 @@
     <Compile Include="BookingPage.Designer.cs">
       <DependentUpon>BookingPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bookings.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookingSeats.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="FlightPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FlightPage.Designer.cs">
       <DependentUpon>FlightPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flights.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -125,6 +134,9 @@
       <DependentUpon>RegisterPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seats.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
