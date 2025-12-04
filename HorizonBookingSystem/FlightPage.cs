@@ -79,7 +79,6 @@ namespace HorizonBookingSystem
                 // Open BookingPage with the selected flight
                 var bookingPage = new BookingPage(userloggedIn, selectedFlight);
                 bookingPage.Show();
-                this.Hide(); // or this.Close() if you want to close FlightPage
             }
             else
             {
@@ -167,6 +166,11 @@ namespace HorizonBookingSystem
         private void btnBook_Click(object sender, EventArgs e)
         {
             NavigateToBookingPage();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

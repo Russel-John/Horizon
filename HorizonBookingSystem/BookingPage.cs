@@ -131,5 +131,15 @@ namespace HorizonBookingSystem
             seatSelectionPage.Show();
             this.Hide();
         }
+
+        private void LblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblTotalPrice_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

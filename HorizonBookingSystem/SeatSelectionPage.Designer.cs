@@ -228,6 +228,7 @@
             this.Controls.Add(this.lblTicketInfo);
             this.Controls.Add(this.lblFlightInfo);
             this.Controls.Add(this.PanelTitle);
+            this.MaximizeBox = false;
             this.Name = "SeatSelectionPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seat Selection - Horizon Booking System";
