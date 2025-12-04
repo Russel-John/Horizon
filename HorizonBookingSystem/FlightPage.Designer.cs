@@ -252,6 +252,7 @@
             this.btnBook.TabIndex = 10;
             this.btnBook.Text = "Book";
             this.btnBook.UseVisualStyleBackColor = false;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // FlightPage
             // 

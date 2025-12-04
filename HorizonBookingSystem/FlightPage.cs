@@ -41,6 +41,50 @@ namespace HorizonBookingSystem
             // Hook events
             this.btnSearch.Click += BtnSearch_Click;
             this.cmBoxSort.SelectedIndexChanged += CmBoxSort_SelectedIndexChanged;
+            
+            // Hook double-click on DataGridView (optional)
+            this.dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+        }
+
+        // Handle row selection to navigate to BookingPage
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                NavigateToBookingPage();
+            }
+        }
+
+        private void NavigateToBookingPage()
+        {
+            // Get the selected flight from the DataGridView
+            if (dataGridView1.CurrentRow != null)
+            {
+                var selectedRow = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
+                
+                // Extract flight details from the DataRow
+                int flightId = (int)selectedRow["FlightID"];
+                
+                // Create a Flights object with the selected data
+                var selectedFlight = new Flights
+                {
+                    FlightID = flightId,
+                    Departure = selectedRow["Departure"]?.ToString(),
+                    Destination = selectedRow["Destination"]?.ToString(),
+                    FlightDate = selectedRow["FlightDate"] as DateTime?,
+                    FlightTime = selectedRow["FlightTime"]?.ToString(),
+                    Price = selectedRow["Price"] as decimal?
+                };
+
+                // Open BookingPage with the selected flight
+                var bookingPage = new BookingPage(userloggedIn, selectedFlight);
+                bookingPage.Show();
+                this.Hide(); // or this.Close() if you want to close FlightPage
+            }
+            else
+            {
+                MessageBox.Show("Please select a flight first.", "No Flight Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void cmBoxFrom_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,6 +162,11 @@ namespace HorizonBookingSystem
 
             // Refresh the grid to reflect the new data source
             dataGridView1.Refresh();
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            NavigateToBookingPage();
         }
     }
 }
