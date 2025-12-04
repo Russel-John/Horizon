@@ -387,6 +387,11 @@ namespace HorizonBookingSystem
                 this.Close();
             }
         }
+
+        private void PanelTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
