@@ -140,7 +140,7 @@ namespace HorizonBookingSystem
                         Tag = seat,
                         Dock = DockStyle.Fill,
                         Margin = new Padding(5),
-                        Font = new Font("Arial", 12, FontStyle.Bold),
+                        Font = new Font("Segoe UI", 12, FontStyle.Bold),
                         FlatStyle = FlatStyle.Flat,
                         Cursor = Cursors.Hand
                     };
@@ -174,82 +174,7 @@ namespace HorizonBookingSystem
 
             // Add the grid to the panel
             panelSeats.Controls.Add(seatGrid);
-
-            // Add legend
-            AddLegend();
-        }
-
-        private void AddLegend()
-        {
-            // Create a panel for the legend
-            Panel legendPanel = new Panel
-            {
-                Height = 60,
-                Dock = DockStyle.Bottom,
-                BackColor = Color.WhiteSmoke
-            };
-
-            int startX = 20;
-            int startY = 15;
-            int spacing = 150;
-
-            // Available
-            Panel availableBox = new Panel
-            {
-                BackColor = Color.LightGreen,
-                Size = new Size(30, 30),
-                Location = new Point(startX, startY),
-                BorderStyle = BorderStyle.FixedSingle
-            };
-            Label availableLabel = new Label
-            {
-                Text = "Available",
-                Location = new Point(startX + 40, startY + 5),
-                AutoSize = true,
-                Font = new Font("Arial", 10, FontStyle.Regular)
-            };
-
-            // Selected
-            Panel selectedBox = new Panel
-            {
-                BackColor = Color.Blue,
-                Size = new Size(30, 30),
-                Location = new Point(startX + spacing, startY),
-                BorderStyle = BorderStyle.FixedSingle
-            };
-            Label selectedLabel = new Label
-            {
-                Text = "Selected",
-                Location = new Point(startX + spacing + 40, startY + 5),
-                AutoSize = true,
-                Font = new Font("Arial", 10, FontStyle.Regular)
-            };
-
-            // Booked
-            Panel bookedBox = new Panel
-            {
-                BackColor = Color.Gray,
-                Size = new Size(30, 30),
-                Location = new Point(startX + (spacing * 2), startY),
-                BorderStyle = BorderStyle.FixedSingle
-            };
-            Label bookedLabel = new Label
-            {
-                Text = "Booked",
-                Location = new Point(startX + (spacing * 2) + 40, startY + 5),
-                AutoSize = true,
-                Font = new Font("Arial", 10, FontStyle.Regular)
-            };
-
-            legendPanel.Controls.Add(availableBox);
-            legendPanel.Controls.Add(availableLabel);
-            legendPanel.Controls.Add(selectedBox);
-            legendPanel.Controls.Add(selectedLabel);
-            legendPanel.Controls.Add(bookedBox);
-            legendPanel.Controls.Add(bookedLabel);
-
-            this.Controls.Add(legendPanel);
-            legendPanel.BringToFront();
+            
         }
 
         private void SeatButton_Click(object sender, EventArgs e)
