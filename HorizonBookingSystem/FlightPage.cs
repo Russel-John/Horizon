@@ -33,17 +33,35 @@ namespace HorizonBookingSystem
             // Ensure the binding source initially points to the full table
             this.flightsBindingSource.DataSource = this.bookingDBDataSet.Flights;
 
-            // Replace sort options with date-based options (designer had price labels)
-            cmBoxSort.Items.Clear();
-            cmBoxSort.Items.AddRange(new object[] { "Latest", "Oldest" });
-            cmBoxSort.SelectedIndex = -1;
+            // Populate departure cities from database (distinct values)
+            var departureCities = this.bookingDBDataSet.Flights
+                .Select(f => f.Departure)
+                .Distinct()
+                .OrderBy(d => d)
+                .ToList();
+            cmBoxFrom.DataSource = departureCities;
+            cmBoxFrom.SelectedIndex = -1; // No selection initially
+
+            // Populate destination cities from database (distinct values)
+            var destinationCities = this.bookingDBDataSet.Flights
+                .Select(f => f.Destination)
+                .Distinct()
+                .OrderBy(d => d)
+                .ToList();
+            cmBoxTo.DataSource = destinationCities;
+            cmBoxTo.SelectedIndex = -1; // No selection initially
+
+            // Populate sort options
+            var sortOptions = new List<string> { "Latest", "Oldest" };
+            cmBoxSort.DataSource = sortOptions;
+            cmBoxSort.SelectedIndex = -1; // No selection initially
 
             // Hook events
             this.btnSearch.Click += BtnSearch_Click;
             this.cmBoxSort.SelectedIndexChanged += CmBoxSort_SelectedIndexChanged;
             
             // Hook double-click on DataGridView (optional)
-            this.dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+            this.dgvFlights.CellDoubleClick += DataGridView1_CellDoubleClick;
         }
 
         // Handle row selection to navigate to BookingPage
@@ -58,9 +76,9 @@ namespace HorizonBookingSystem
         private void NavigateToBookingPage()
         {
             // Get the selected flight from the DataGridView
-            if (dataGridView1.CurrentRow != null)
+            if (dgvFlights.CurrentRow != null)
             {
-                var selectedRow = (DataRowView)dataGridView1.CurrentRow.DataBoundItem;
+                var selectedRow = (DataRowView)dgvFlights.CurrentRow.DataBoundItem;
                 
                 // Extract flight details from the DataRow
                 int flightId = (int)selectedRow["FlightID"];
@@ -107,9 +125,9 @@ namespace HorizonBookingSystem
         /// </summary>
         private void ApplyFilterAndSort()
         {
-            // Read selected values (allow typed selection or typed-in text)
-            string from = (cmBoxFrom.SelectedItem as string) ?? cmBoxFrom.Text;
-            string to = (cmBoxTo.SelectedItem as string) ?? cmBoxTo.Text;
+            // Read selected values from databound ComboBoxes
+            string from = cmBoxFrom.SelectedItem as string;
+            string to = cmBoxTo.SelectedItem as string;
 
             // Get the typed DataTable
             var flightsTable = bookingDBDataSet.Flights;
@@ -129,7 +147,7 @@ namespace HorizonBookingSystem
 
             // Determine sort direction based on cmBoxSort selection (by FlightDate)
             string sortExpression = null;
-            var sortSelection = (cmBoxSort.SelectedItem as string) ?? cmBoxSort.Text;
+            var sortSelection = cmBoxSort.SelectedItem as string;
             if (!string.IsNullOrWhiteSpace(sortSelection))
             {
                 if (sortSelection.Equals("Latest", StringComparison.OrdinalIgnoreCase))
@@ -160,7 +178,7 @@ namespace HorizonBookingSystem
             }
 
             // Refresh the grid to reflect the new data source
-            dataGridView1.Refresh();
+            dgvFlights.Refresh();
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -169,6 +187,21 @@ namespace HorizonBookingSystem
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblTo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmBoxTo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFrom_Click(object sender, EventArgs e)
         {
 
         }
