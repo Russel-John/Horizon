@@ -31,7 +31,7 @@ namespace HorizonBookingSystem
         {
             return activeChildForm;
         }
-
+            
         private void OpenChildForm(Form child, object v)
         {
             // Close existing child

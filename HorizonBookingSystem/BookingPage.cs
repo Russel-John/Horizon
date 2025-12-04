@@ -108,7 +108,28 @@ namespace HorizonBookingSystem
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            // Validate number of tickets
+            int numberOfTickets = (int)numTickets.Value;
+            if (numberOfTickets < 1)
+            {
+                MessageBox.Show("Please select at least 1 ticket.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Validate flight price
+            if (selectedFlight?.Price == null)
+            {
+                MessageBox.Show("Flight price information is unavailable.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Calculate total price
+            decimal totalPrice = selectedFlight.Price.Value * numberOfTickets;
+
+            // Navigate to seat selection page with all booking details
+            var seatSelectionPage = new SeatSelectionPage(userLoggedIn, selectedFlight, numberOfTickets, totalPrice);
+            seatSelectionPage.Show();
+            this.Hide();
         }
     }
 }
