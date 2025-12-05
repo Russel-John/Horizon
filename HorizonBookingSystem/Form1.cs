@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace HorizonBookingSystem
 {
     public partial class Loginpage : Form
     {
         private BookingDBEntities db = new BookingDBEntities();
+
         public Loginpage()
         {
             InitializeComponent();
@@ -30,48 +23,38 @@ namespace HorizonBookingSystem
             string username = txtBoxUsername.Text;
             string password = txtBoxPassword.Text;
 
-            // SELECT Users WHERE USERNAME = "name"
             var user = db.Users.Where(u => u.username.Equals(username)).FirstOrDefault();
 
             if (user == null)
             {
-
                 MessageBox.Show("No Such Username Found in the System", "No User Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             if (!user.password.Equals(password))
             {
-
                 MessageBox.Show("Wrong Password", "Invalid Credentials", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (user != null)
+            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (user.roleID == 1)
             {
-                // Successful login
-                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                // Check if user is admin (roleID = 1) or regular user (roleID = 2)
-                if (user.roleID == 1)
-                {
-                    // Admin login - open AdminPage
-                    AdminPage adminPage = new AdminPage(user);
-                    adminPage.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    // Regular user login - open HomePage
-                    HomePage homePage = new HomePage(user);
-                    homePage.Show();
-                    this.Hide();
-                }
+                AdminPage adminPage = new AdminPage(user);
+                adminPage.Show();
+                this.Hide();
+            }
+            else
+            {
+                HomePage homePage = new HomePage(user);
+                homePage.Show();
+                this.Hide();
             }
         }
 
         private void txtBoxPassword_TextChanged(object sender, EventArgs e)
         {
-
 
         }
 

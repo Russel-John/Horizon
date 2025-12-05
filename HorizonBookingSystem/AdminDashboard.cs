@@ -64,5 +64,10 @@ namespace HorizonBookingSystem
                 MessageBox.Show($"Error loading statistics: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void lblTotalBookings_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
