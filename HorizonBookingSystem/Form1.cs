@@ -50,10 +50,22 @@ namespace HorizonBookingSystem
             {
                 // Successful login
                 MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Open the main application form
-                HomePage homePage = new HomePage(user); // Pass the user object to the main form
-                homePage.Show();
-                this.Hide();
+                
+                // Check if user is admin (roleID = 1) or regular user (roleID = 2)
+                if (user.roleID == 1)
+                {
+                    // Admin login - open AdminPage
+                    AdminPage adminPage = new AdminPage(user);
+                    adminPage.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // Regular user login - open HomePage
+                    HomePage homePage = new HomePage(user);
+                    homePage.Show();
+                    this.Hide();
+                }
             }
         }
 
