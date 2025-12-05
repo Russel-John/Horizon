@@ -1,4 +1,4 @@
-﻿namespace HorizonBookingSystem
+namespace HorizonBookingSystem
 {
     partial class RegisterPage
     {
@@ -228,68 +228,6 @@
             this.panelUsernameBorder.PerformLayout();
             this.ResumeLayout(false);
 
-        }
-
-        private void txtBoxUsername_Enter(object sender, System.EventArgs e)
-        {
-            if (txtBoxUsername.Text == "Username")
-            {
-                txtBoxUsername.Text = "";
-                txtBoxUsername.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
-            }
-        }
-
-        private void txtBoxUsername_Leave(object sender, System.EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtBoxUsername.Text))
-            {
-                txtBoxUsername.Text = "Username";
-                txtBoxUsername.ForeColor = System.Drawing.Color.Gray;
-            }
-        }
-
-        private void txtBoxPassword_Enter(object sender, System.EventArgs e)
-        {
-            if (txtBoxPassword.Text == "Password")
-            {
-                txtBoxPassword.Text = "";
-                txtBoxPassword.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
-                txtBoxPassword.PasswordChar = '●';
-            }
-        }
-
-        private void txtBoxPassword_Leave(object sender, System.EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtBoxPassword.Text))
-            {
-                txtBoxPassword.PasswordChar = '\0';
-                txtBoxPassword.Text = "Password";
-                txtBoxPassword.ForeColor = System.Drawing.Color.Gray;
-            }
-        }
-
-        private void txtBoxEmail_Enter(object sender, System.EventArgs e)
-        {
-            if (txtBoxEmail.Text == "Email")
-            {
-                txtBoxEmail.Text = "";
-                txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
-            }
-        }
-
-        private void txtBoxEmail_Leave(object sender, System.EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtBoxEmail.Text))
-            {
-                txtBoxEmail.Text = "Email";
-                txtBoxEmail.ForeColor = System.Drawing.Color.Gray;
-            }
-        }
-
-        private void linkLogin_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
-        {
-            new Loginpage().Show();
-            this.Hide();
         }
 
         #endregion

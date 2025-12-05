@@ -13,6 +13,49 @@ namespace HorizonBookingSystem
             InitializeComponent();
         }
 
+        private void Loginpage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxUsername_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxUsername.Text == "Username")
+            {
+                txtBoxUsername.Text = "";
+                txtBoxUsername.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
+            }
+        }
+
+        private void txtBoxUsername_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBoxUsername.Text))
+            {
+                txtBoxUsername.Text = "Username";
+                txtBoxUsername.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void txtBoxPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxPassword.Text == "Password")
+            {
+                txtBoxPassword.Text = "";
+                txtBoxPassword.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
+                txtBoxPassword.PasswordChar = '●';
+            }
+        }
+
+        private void txtBoxPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBoxPassword.Text))
+            {
+                txtBoxPassword.PasswordChar = '\0';
+                txtBoxPassword.Text = "Password";
+                txtBoxPassword.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
         private void Loginbtn_Click(object sender, EventArgs e)
         {
             string username = txtBoxUsername.Text;
@@ -64,11 +107,6 @@ namespace HorizonBookingSystem
         {
             new RegisterPage().Show();
             this.Hide();
-        }
-
-        private void Loginpage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

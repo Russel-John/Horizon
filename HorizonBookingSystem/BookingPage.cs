@@ -15,11 +15,6 @@ namespace HorizonBookingSystem
         private Users userLoggedIn;
         private Flights selectedFlight;
 
-        public BookingPage()
-        {
-            InitializeComponent();
-        }
-
         // Constructor to accept flight details
         public BookingPage(Users user, Flights flight)
         {
@@ -128,6 +123,7 @@ namespace HorizonBookingSystem
 
             // Navigate to seat selection page with all booking details
             var seatSelectionPage = new SeatSelectionPage(userLoggedIn, selectedFlight, numberOfTickets, totalPrice);
+            seatSelectionPage.FormClosed += (s, args) => this.Close();
             seatSelectionPage.Show();
             this.Hide();
         }

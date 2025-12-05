@@ -26,19 +26,6 @@ namespace HorizonBookingSystem
             var flights = db.Flights.ToList();
         }
 
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // AdminFlightsView
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "AdminFlightsView";
-            this.Load += new System.EventHandler(this.AdminFlightsView_Load_1);
-            this.ResumeLayout(false);
-
-        }
-
         private void AdminFlightsView_Load_1(object sender, EventArgs e)
         {
 

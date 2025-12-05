@@ -18,24 +18,6 @@ namespace HorizonBookingSystem
         {
             // TODO: Implement reports and analytics
         }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // AdminReportsView
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "AdminReportsView";
-            this.Load += new System.EventHandler(this.AdminReportsView_Load_1);
-            this.ResumeLayout(false);
-
-        }
-
-        private void AdminReportsView_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 
     partial class AdminReportsView
