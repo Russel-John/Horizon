@@ -166,7 +166,6 @@
             this.DesktopPanel.Name = "DesktopPanel";
             this.DesktopPanel.Size = new System.Drawing.Size(614, 450);
             this.DesktopPanel.TabIndex = 2;
-            this.DesktopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DesktopPanel_Paint);
             // 
             // HomePage
             // 

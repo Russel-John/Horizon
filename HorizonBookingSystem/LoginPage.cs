@@ -13,15 +13,24 @@ namespace HorizonBookingSystem
             InitializeComponent();
         }
 
-        private void Loginpage_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Loginbtn_Click(object sender, EventArgs e)
         {
             string username = txtBoxUsername.Text;
             string password = txtBoxPassword.Text;
+
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                MessageBox.Show("Please enter your username", "Username Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxUsername.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter your password", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxPassword.Focus();
+                return;
+            }
 
             var user = db.Users.Where(u => u.username.Equals(username)).FirstOrDefault();
 
@@ -41,33 +50,25 @@ namespace HorizonBookingSystem
 
             if (user.roleID == 1)
             {
-                AdminPage adminPage = new AdminPage(user);
-                adminPage.Show();
-                this.Hide();
+                new AdminPage(user).Show();
             }
             else
             {
-                HomePage homePage = new HomePage(user);
-                homePage.Show();
-                this.Hide();
+                new HomePage(user).Show();
             }
-        }
-
-        private void txtBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBoxUsername_TextChanged(object sender, EventArgs e)
-        {
-
+            
+            this.Hide();
         }
 
         private void linkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RegisterPage registerPage = new RegisterPage();
-            registerPage.Show();
+            new RegisterPage().Show();
             this.Hide();
+        }
+
+        private void Loginpage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
