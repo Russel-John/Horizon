@@ -29,110 +29,175 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterPage));
-            this.txtBoxPassword = new System.Windows.Forms.TextBox();
-            this.PassLbl = new System.Windows.Forms.Label();
-            this.UserLbl = new System.Windows.Forms.Label();
-            this.txtBoxUsername = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
+            this.panelRegister = new System.Windows.Forms.Panel();
+            this.panelEmailBorder = new System.Windows.Forms.Panel();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
+            this.panelPasswordBorder = new System.Windows.Forms.Panel();
+            this.txtBoxPassword = new System.Windows.Forms.TextBox();
+            this.panelUsernameBorder = new System.Windows.Forms.Panel();
+            this.txtBoxUsername = new System.Windows.Forms.TextBox();
+            this.lblSubtitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.linkLogin = new System.Windows.Forms.LinkLabel();
             this.Registerbtn = new System.Windows.Forms.Button();
+            this.panelRegister.SuspendLayout();
+            this.panelEmailBorder.SuspendLayout();
+            this.panelPasswordBorder.SuspendLayout();
+            this.panelUsernameBorder.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtBoxPassword
+            // panelRegister
             // 
-            this.txtBoxPassword.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPassword.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtBoxPassword.Location = new System.Drawing.Point(257, 222);
-            this.txtBoxPassword.Name = "txtBoxPassword";
-            this.txtBoxPassword.PasswordChar = '●';
-            this.txtBoxPassword.Size = new System.Drawing.Size(269, 23);
-            this.txtBoxPassword.TabIndex = 7;
-            this.txtBoxPassword.TextChanged += new System.EventHandler(this.txtBoxPassword_TextChanged);
+            this.panelRegister.BackColor = System.Drawing.Color.White;
+            this.panelRegister.Controls.Add(this.panelEmailBorder);
+            this.panelRegister.Controls.Add(this.panelPasswordBorder);
+            this.panelRegister.Controls.Add(this.panelUsernameBorder);
+            this.panelRegister.Controls.Add(this.lblSubtitle);
+            this.panelRegister.Controls.Add(this.lblTitle);
+            this.panelRegister.Controls.Add(this.lblLogin);
+            this.panelRegister.Controls.Add(this.linkLogin);
+            this.panelRegister.Controls.Add(this.Registerbtn);
+            this.panelRegister.Location = new System.Drawing.Point(220, 30);
+            this.panelRegister.Name = "panelRegister";
+            this.panelRegister.Size = new System.Drawing.Size(380, 450);
+            this.panelRegister.TabIndex = 0;
             // 
-            // PassLbl
+            // panelEmailBorder
             // 
-            this.PassLbl.AutoSize = true;
-            this.PassLbl.BackColor = System.Drawing.Color.Transparent;
-            this.PassLbl.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassLbl.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.PassLbl.Location = new System.Drawing.Point(253, 199);
-            this.PassLbl.Name = "PassLbl";
-            this.PassLbl.Size = new System.Drawing.Size(81, 20);
-            this.PassLbl.TabIndex = 6;
-            this.PassLbl.Text = "Password";
-            // 
-            // UserLbl
-            // 
-            this.UserLbl.AutoSize = true;
-            this.UserLbl.BackColor = System.Drawing.Color.Transparent;
-            this.UserLbl.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserLbl.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.UserLbl.Location = new System.Drawing.Point(253, 140);
-            this.UserLbl.Name = "UserLbl";
-            this.UserLbl.Size = new System.Drawing.Size(81, 20);
-            this.UserLbl.TabIndex = 5;
-            this.UserLbl.Text = "Username";
-            // 
-            // txtBoxUsername
-            // 
-            this.txtBoxUsername.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxUsername.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtBoxUsername.Location = new System.Drawing.Point(257, 163);
-            this.txtBoxUsername.Name = "txtBoxUsername";
-            this.txtBoxUsername.Size = new System.Drawing.Size(269, 23);
-            this.txtBoxUsername.TabIndex = 4;
-            this.txtBoxUsername.TextChanged += new System.EventHandler(this.txtBoxUsername_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cascadia Mono", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(240, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 39);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Registration Form";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmail.Font = new System.Drawing.Font("Cascadia Code", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblEmail.Location = new System.Drawing.Point(253, 257);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(54, 20);
-            this.lblEmail.TabIndex = 9;
-            this.lblEmail.Text = "Email";
+            this.panelEmailBorder.BackColor = System.Drawing.Color.White;
+            this.panelEmailBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEmailBorder.Controls.Add(this.txtBoxEmail);
+            this.panelEmailBorder.Location = new System.Drawing.Point(30, 230);
+            this.panelEmailBorder.Name = "panelEmailBorder";
+            this.panelEmailBorder.Size = new System.Drawing.Size(320, 42);
+            this.panelEmailBorder.TabIndex = 2;
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Font = new System.Drawing.Font("Cascadia Code", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEmail.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtBoxEmail.Location = new System.Drawing.Point(257, 289);
+            this.txtBoxEmail.BackColor = System.Drawing.Color.White;
+            this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxEmail.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxEmail.Location = new System.Drawing.Point(12, 10);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.PasswordChar = '●';
-            this.txtBoxEmail.Size = new System.Drawing.Size(269, 23);
-            this.txtBoxEmail.TabIndex = 10;
-            this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
+            this.txtBoxEmail.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxEmail.TabIndex = 2;
+            this.txtBoxEmail.Text = "Email";
+            this.txtBoxEmail.Enter += new System.EventHandler(this.txtBoxEmail_Enter);
+            this.txtBoxEmail.Leave += new System.EventHandler(this.txtBoxEmail_Leave);
+            // 
+            // panelPasswordBorder
+            // 
+            this.panelPasswordBorder.BackColor = System.Drawing.Color.White;
+            this.panelPasswordBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPasswordBorder.Controls.Add(this.txtBoxPassword);
+            this.panelPasswordBorder.Location = new System.Drawing.Point(30, 175);
+            this.panelPasswordBorder.Name = "panelPasswordBorder";
+            this.panelPasswordBorder.Size = new System.Drawing.Size(320, 42);
+            this.panelPasswordBorder.TabIndex = 1;
+            // 
+            // txtBoxPassword
+            // 
+            this.txtBoxPassword.BackColor = System.Drawing.Color.White;
+            this.txtBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxPassword.Location = new System.Drawing.Point(12, 10);
+            this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxPassword.TabIndex = 1;
+            this.txtBoxPassword.Text = "Password";
+            this.txtBoxPassword.Enter += new System.EventHandler(this.txtBoxPassword_Enter);
+            this.txtBoxPassword.Leave += new System.EventHandler(this.txtBoxPassword_Leave);
+            // 
+            // panelUsernameBorder
+            // 
+            this.panelUsernameBorder.BackColor = System.Drawing.Color.White;
+            this.panelUsernameBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUsernameBorder.Controls.Add(this.txtBoxUsername);
+            this.panelUsernameBorder.Location = new System.Drawing.Point(30, 120);
+            this.panelUsernameBorder.Name = "panelUsernameBorder";
+            this.panelUsernameBorder.Size = new System.Drawing.Size(320, 42);
+            this.panelUsernameBorder.TabIndex = 0;
+            // 
+            // txtBoxUsername
+            // 
+            this.txtBoxUsername.BackColor = System.Drawing.Color.White;
+            this.txtBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxUsername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxUsername.Location = new System.Drawing.Point(12, 10);
+            this.txtBoxUsername.Name = "txtBoxUsername";
+            this.txtBoxUsername.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxUsername.TabIndex = 0;
+            this.txtBoxUsername.Text = "Username";
+            this.txtBoxUsername.Enter += new System.EventHandler(this.txtBoxUsername_Enter);
+            this.txtBoxUsername.Leave += new System.EventHandler(this.txtBoxUsername_Leave);
+            // 
+            // lblSubtitle
+            // 
+            this.lblSubtitle.AutoSize = true;
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.lblSubtitle.Location = new System.Drawing.Point(85, 77);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(212, 17);
+            this.lblSubtitle.TabIndex = 7;
+            this.lblSubtitle.Text = "Create Your Account to Get Started";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lblTitle.Location = new System.Drawing.Point(101, 30);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(181, 47);
+            this.lblTitle.TabIndex = 6;
+            this.lblTitle.Text = "REGISTER";
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
+            this.lblLogin.Location = new System.Drawing.Point(85, 405);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(142, 15);
+            this.lblLogin.TabIndex = 5;
+            this.lblLogin.Text = "Already have an account?";
+            // 
+            // linkLogin
+            // 
+            this.linkLogin.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.linkLogin.AutoSize = true;
+            this.linkLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLogin.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.linkLogin.Location = new System.Drawing.Point(235, 405);
+            this.linkLogin.Name = "linkLogin";
+            this.linkLogin.Size = new System.Drawing.Size(66, 15);
+            this.linkLogin.TabIndex = 4;
+            this.linkLogin.TabStop = true;
+            this.linkLogin.Text = "Login here";
+            this.linkLogin.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.linkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
             // 
             // Registerbtn
             // 
-            this.Registerbtn.BackColor = System.Drawing.Color.SteelBlue;
-            this.Registerbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Registerbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.Registerbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Registerbtn.FlatAppearance.BorderSize = 0;
+            this.Registerbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.Registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Registerbtn.Font = new System.Drawing.Font("Cascadia Mono", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registerbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registerbtn.ForeColor = System.Drawing.Color.White;
-            this.Registerbtn.Location = new System.Drawing.Point(257, 333);
+            this.Registerbtn.Location = new System.Drawing.Point(30, 295);
             this.Registerbtn.Name = "Registerbtn";
-            this.Registerbtn.Size = new System.Drawing.Size(269, 38);
-            this.Registerbtn.TabIndex = 11;
-            this.Registerbtn.Text = "Register";
+            this.Registerbtn.Size = new System.Drawing.Size(320, 45);
+            this.Registerbtn.TabIndex = 3;
+            this.Registerbtn.Text = "REGISTER";
             this.Registerbtn.UseVisualStyleBackColor = false;
             this.Registerbtn.Click += new System.EventHandler(this.Registerbtn_Click);
             // 
@@ -140,37 +205,106 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Registerbtn);
-            this.Controls.Add(this.txtBoxEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBoxPassword);
-            this.Controls.Add(this.PassLbl);
-            this.Controls.Add(this.UserLbl);
-            this.Controls.Add(this.txtBoxUsername);
+            this.ClientSize = new System.Drawing.Size(820, 510);
+            this.Controls.Add(this.panelRegister);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RegisterPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegisterPage";
+            this.Text = "Horizon - Register";
             this.Load += new System.EventHandler(this.RegisterPage_Load);
+            this.panelRegister.ResumeLayout(false);
+            this.panelRegister.PerformLayout();
+            this.panelEmailBorder.ResumeLayout(false);
+            this.panelEmailBorder.PerformLayout();
+            this.panelPasswordBorder.ResumeLayout(false);
+            this.panelPasswordBorder.PerformLayout();
+            this.panelUsernameBorder.ResumeLayout(false);
+            this.panelUsernameBorder.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
+        }
+
+        private void txtBoxUsername_Enter(object sender, System.EventArgs e)
+        {
+            if (txtBoxUsername.Text == "Username")
+            {
+                txtBoxUsername.Text = "";
+                txtBoxUsername.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
+            }
+        }
+
+        private void txtBoxUsername_Leave(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBoxUsername.Text))
+            {
+                txtBoxUsername.Text = "Username";
+                txtBoxUsername.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void txtBoxPassword_Enter(object sender, System.EventArgs e)
+        {
+            if (txtBoxPassword.Text == "Password")
+            {
+                txtBoxPassword.Text = "";
+                txtBoxPassword.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
+                txtBoxPassword.PasswordChar = '●';
+            }
+        }
+
+        private void txtBoxPassword_Leave(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBoxPassword.Text))
+            {
+                txtBoxPassword.PasswordChar = '\0';
+                txtBoxPassword.Text = "Password";
+                txtBoxPassword.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void txtBoxEmail_Enter(object sender, System.EventArgs e)
+        {
+            if (txtBoxEmail.Text == "Email")
+            {
+                txtBoxEmail.Text = "";
+                txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
+            }
+        }
+
+        private void txtBoxEmail_Leave(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBoxEmail.Text))
+            {
+                txtBoxEmail.Text = "Email";
+                txtBoxEmail.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void linkLogin_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+        {
+            new Loginpage().Show();
+            this.Hide();
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBoxPassword;
-        private System.Windows.Forms.Label PassLbl;
-        private System.Windows.Forms.Label UserLbl;
-        private System.Windows.Forms.TextBox txtBoxUsername;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Panel panelRegister;
+        private System.Windows.Forms.Panel panelEmailBorder;
         private System.Windows.Forms.TextBox txtBoxEmail;
+        private System.Windows.Forms.Panel panelPasswordBorder;
+        private System.Windows.Forms.TextBox txtBoxPassword;
+        private System.Windows.Forms.Panel panelUsernameBorder;
+        private System.Windows.Forms.TextBox txtBoxUsername;
+        private System.Windows.Forms.Label lblSubtitle;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.LinkLabel linkLogin;
         private System.Windows.Forms.Button Registerbtn;
     }
 }

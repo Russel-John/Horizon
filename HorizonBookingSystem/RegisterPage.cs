@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HorizonBookingSystem
@@ -14,66 +7,61 @@ namespace HorizonBookingSystem
     public partial class RegisterPage : Form
     {
         private BookingDBEntities db = new BookingDBEntities();
+        
         public RegisterPage()
         {
             InitializeComponent();
         }
 
-        private void txtBoxUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBoxEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Registerbtn_Click(object sender, EventArgs e)
         {
+            string username = txtBoxUsername.Text;
+            string password = txtBoxPassword.Text;
+            string email = txtBoxEmail.Text;
+
+            if (username == "Username" || string.IsNullOrWhiteSpace(username))
+            {
+                MessageBox.Show("Please enter your username.", "Username Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxUsername.Focus();
+                return;
+            }
+
+            if (password == "Password" || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please enter your password.", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxPassword.Focus();
+                return;
+            }
+
+            if (email == "Email" || string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Please enter your email.", "Email Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxEmail.Focus();
+                return;
+            }
+
+            var existingUser = db.Users.Where(u => u.username.Equals(username)).FirstOrDefault();
+            if (existingUser != null)
+            {
+                MessageBox.Show("Username already exists. Please choose a different username.", "Username Taken", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             Users newUser = new Users
             {
-                username = txtBoxUsername.Text,
-                password = txtBoxPassword.Text, 
-                email = txtBoxEmail.Text,
+                username = username,
+                password = password,
+                email = email,
                 roleID = 2
             };
 
-            if (string.IsNullOrWhiteSpace(txtBoxUsername.Text) &&
-            string.IsNullOrWhiteSpace(txtBoxPassword.Text) &&
-            string.IsNullOrWhiteSpace(txtBoxEmail.Text))
-            {
-                MessageBox.Show("Please fill in all required fields (username, password, and email).", "Lacking Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(txtBoxUsername.Text))
-            {
-                MessageBox.Show("Please fill in Your Username.", "Lacking Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(txtBoxPassword.Text))
-            {
-                MessageBox.Show("Please fill in Your Password.", "Lacking Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(txtBoxEmail.Text))
-            {
-                MessageBox.Show("Please fill in Your Email.", "Lacking Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             db.Users.Add(newUser);
             db.SaveChanges();
-            MessageBox.Show("Registration Successful", "Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Loginpage logpage = new Loginpage();
-            logpage.Show();
+            
+            MessageBox.Show("Registration Successful! You can now login with your credentials.", "Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            new Loginpage().Show();
             this.Hide();
-
         }
 
         private void RegisterPage_Load(object sender, EventArgs e)

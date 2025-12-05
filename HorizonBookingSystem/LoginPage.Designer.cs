@@ -96,7 +96,7 @@
             this.linkRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkRegister.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkRegister.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.linkRegister.Location = new System.Drawing.Point(225, 350);
+            this.linkRegister.Location = new System.Drawing.Point(225, 380);
             this.linkRegister.Name = "linkRegister";
             this.linkRegister.Size = new System.Drawing.Size(83, 15);
             this.linkRegister.TabIndex = 3;
@@ -110,7 +110,7 @@
             this.lblRegister.AutoSize = true;
             this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
-            this.lblRegister.Location = new System.Drawing.Point(75, 350);
+            this.lblRegister.Location = new System.Drawing.Point(75, 380);
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(131, 15);
             this.lblRegister.TabIndex = 4;
@@ -126,9 +126,9 @@
             this.panelLogin.Controls.Add(this.lblRegister);
             this.panelLogin.Controls.Add(this.linkRegister);
             this.panelLogin.Controls.Add(this.Loginbtn);
-            this.panelLogin.Location = new System.Drawing.Point(220, 40);
+            this.panelLogin.Location = new System.Drawing.Point(220, 30);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(380, 400);
+            this.panelLogin.Size = new System.Drawing.Size(380, 450);
             this.panelLogin.TabIndex = 5;
             // 
             // panelPasswordBorder
@@ -178,8 +178,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(820, 480);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(820, 510);
             this.Controls.Add(this.panelLogin);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -68,9 +68,15 @@ namespace HorizonBookingSystem
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            Loginpage logpage = new Loginpage();
-            logpage.Show();
-            this.Close();
+            var result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Loginpage loginPage = new Loginpage();
+                loginPage.Show();
+                this.Close();
+            }
         }
 
         private void HomeButton_Click(object sender, EventArgs e)
