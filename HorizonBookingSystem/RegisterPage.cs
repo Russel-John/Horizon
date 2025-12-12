@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace HorizonBookingSystem
@@ -80,6 +81,24 @@ namespace HorizonBookingSystem
             this.Hide();
         }
 
+        // Helper method to validate email format
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Regular expression pattern for email validation
+                string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void Registerbtn_Click(object sender, EventArgs e)
         {
             string username = txtBoxUsername.Text;
@@ -103,6 +122,14 @@ namespace HorizonBookingSystem
             if (email == "Email" || string.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("Please enter your email.", "Email Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxEmail.Focus();
+                return;
+            }
+
+            // Validate email format
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Please enter a valid email address (e.g., user@example.com).", "Invalid Email Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtBoxEmail.Focus();
                 return;
             }

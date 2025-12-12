@@ -56,7 +56,7 @@ namespace HorizonBookingSystem
                 // Total Revenue
                 decimal totalRevenue = db.Bookings
                     .Where(b => b.TotalPrice.HasValue)
-                    .Sum(b => b.TotalPrice.Value);
+                    .Sum(b => (decimal?)b.TotalPrice.Value) ?? 0;
                 lblTotalRevenue.Text = totalRevenue.ToString("C");
             }
             catch (Exception ex)
