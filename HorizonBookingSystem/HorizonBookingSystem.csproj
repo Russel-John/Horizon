@@ -69,17 +69,20 @@
     <Compile Include="AdminFlightsView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminFlightsView.Designer.cs">
+      <DependentUpon>AdminFlightsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminReportsView.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AdminUsersView.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUsersView.Designer.cs">
+      <DependentUpon>AdminUsersView.cs</DependentUpon>
     </Compile>
     <Compile Include="BookingDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -181,14 +184,8 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminFlightsView.resx">
-      <DependentUpon>AdminFlightsView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminReportsView.resx">
-      <DependentUpon>AdminReportsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookingPage.resx">
       <DependentUpon>BookingPage.cs</DependentUpon>
