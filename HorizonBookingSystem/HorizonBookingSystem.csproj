@@ -107,6 +107,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BookingViewModel.cs" />
+    <Compile Include="FlightFormDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FlightPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,14 +181,23 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserFormDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminFlightsView.resx">
+      <DependentUpon>AdminFlightsView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUsersView.resx">
+      <DependentUpon>AdminUsersView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookingPage.resx">
       <DependentUpon>BookingPage.cs</DependentUpon>

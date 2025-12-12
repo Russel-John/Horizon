@@ -52,7 +52,7 @@ namespace HorizonBookingSystem
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Padding = new System.Windows.Forms.Padding(20);
-            this.panelHeader.Size = new System.Drawing.Size(614, 100);
+            this.panelHeader.Size = new System.Drawing.Size(803, 100);
             this.panelHeader.TabIndex = 0;
             // 
             // lblWelcome
@@ -89,7 +89,7 @@ namespace HorizonBookingSystem
             this.panelStats.Location = new System.Drawing.Point(0, 100);
             this.panelStats.Name = "panelStats";
             this.panelStats.Padding = new System.Windows.Forms.Padding(20);
-            this.panelStats.Size = new System.Drawing.Size(614, 350);
+            this.panelStats.Size = new System.Drawing.Size(803, 488);
             this.panelStats.TabIndex = 1;
             // 
             // panelCard5
@@ -97,18 +97,18 @@ namespace HorizonBookingSystem
             this.panelCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.panelCard5.Controls.Add(this.lblTotalRevenue);
             this.panelCard5.Controls.Add(this.label10);
-            this.panelCard5.Location = new System.Drawing.Point(30, 250);
+            this.panelCard5.Location = new System.Drawing.Point(30, 343);
             this.panelCard5.Name = "panelCard5";
-            this.panelCard5.Size = new System.Drawing.Size(550, 90);
+            this.panelCard5.Size = new System.Drawing.Size(740, 100);
             this.panelCard5.TabIndex = 4;
             // 
             // lblTotalRevenue
             // 
-            this.lblTotalRevenue.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRevenue.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalRevenue.ForeColor = System.Drawing.Color.White;
-            this.lblTotalRevenue.Location = new System.Drawing.Point(10, 35);
+            this.lblTotalRevenue.Location = new System.Drawing.Point(10, 40);
             this.lblTotalRevenue.Name = "lblTotalRevenue";
-            this.lblTotalRevenue.Size = new System.Drawing.Size(530, 45);
+            this.lblTotalRevenue.Size = new System.Drawing.Size(720, 50);
             this.lblTotalRevenue.TabIndex = 1;
             this.lblTotalRevenue.Text = "$0.00";
             this.lblTotalRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,11 +116,11 @@ namespace HorizonBookingSystem
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(10, 10);
+            this.label10.Location = new System.Drawing.Point(15, 15);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 20);
+            this.label10.Size = new System.Drawing.Size(112, 21);
             this.label10.TabIndex = 0;
             this.label10.Text = "Total Revenue";
             // 
@@ -129,18 +129,18 @@ namespace HorizonBookingSystem
             this.panelCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
             this.panelCard4.Controls.Add(this.lblTodayBookings);
             this.panelCard4.Controls.Add(this.label8);
-            this.panelCard4.Location = new System.Drawing.Point(320, 140);
+            this.panelCard4.Location = new System.Drawing.Point(410, 198);
             this.panelCard4.Name = "panelCard4";
-            this.panelCard4.Size = new System.Drawing.Size(260, 90);
+            this.panelCard4.Size = new System.Drawing.Size(360, 100);
             this.panelCard4.TabIndex = 3;
             // 
             // lblTodayBookings
             // 
-            this.lblTodayBookings.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayBookings.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodayBookings.ForeColor = System.Drawing.Color.White;
-            this.lblTodayBookings.Location = new System.Drawing.Point(10, 35);
+            this.lblTodayBookings.Location = new System.Drawing.Point(10, 40);
             this.lblTodayBookings.Name = "lblTodayBookings";
-            this.lblTodayBookings.Size = new System.Drawing.Size(240, 45);
+            this.lblTodayBookings.Size = new System.Drawing.Size(340, 50);
             this.lblTodayBookings.TabIndex = 1;
             this.lblTodayBookings.Text = "0";
             this.lblTodayBookings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,11 +148,11 @@ namespace HorizonBookingSystem
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(10, 10);
+            this.label8.Location = new System.Drawing.Point(15, 15);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 20);
+            this.label8.Size = new System.Drawing.Size(135, 21);
             this.label8.TabIndex = 0;
             this.label8.Text = "Today\'s Bookings";
             // 
@@ -161,18 +161,18 @@ namespace HorizonBookingSystem
             this.panelCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.panelCard3.Controls.Add(this.lblTotalFlights);
             this.panelCard3.Controls.Add(this.label6);
-            this.panelCard3.Location = new System.Drawing.Point(30, 140);
+            this.panelCard3.Location = new System.Drawing.Point(30, 198);
             this.panelCard3.Name = "panelCard3";
-            this.panelCard3.Size = new System.Drawing.Size(260, 90);
+            this.panelCard3.Size = new System.Drawing.Size(360, 100);
             this.panelCard3.TabIndex = 2;
             // 
             // lblTotalFlights
             // 
-            this.lblTotalFlights.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFlights.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalFlights.ForeColor = System.Drawing.Color.White;
-            this.lblTotalFlights.Location = new System.Drawing.Point(10, 35);
+            this.lblTotalFlights.Location = new System.Drawing.Point(10, 40);
             this.lblTotalFlights.Name = "lblTotalFlights";
-            this.lblTotalFlights.Size = new System.Drawing.Size(240, 45);
+            this.lblTotalFlights.Size = new System.Drawing.Size(340, 50);
             this.lblTotalFlights.TabIndex = 1;
             this.lblTotalFlights.Text = "0";
             this.lblTotalFlights.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,11 +180,11 @@ namespace HorizonBookingSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(10, 10);
+            this.label6.Location = new System.Drawing.Point(15, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 20);
+            this.label6.Size = new System.Drawing.Size(97, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "Total Flights";
             // 
@@ -193,18 +193,18 @@ namespace HorizonBookingSystem
             this.panelCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.panelCard2.Controls.Add(this.lblTotalBookings);
             this.panelCard2.Controls.Add(this.label4);
-            this.panelCard2.Location = new System.Drawing.Point(320, 30);
+            this.panelCard2.Location = new System.Drawing.Point(410, 51);
             this.panelCard2.Name = "panelCard2";
-            this.panelCard2.Size = new System.Drawing.Size(260, 90);
+            this.panelCard2.Size = new System.Drawing.Size(360, 100);
             this.panelCard2.TabIndex = 1;
             // 
             // lblTotalBookings
             // 
-            this.lblTotalBookings.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBookings.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBookings.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBookings.Location = new System.Drawing.Point(10, 35);
+            this.lblTotalBookings.Location = new System.Drawing.Point(10, 40);
             this.lblTotalBookings.Name = "lblTotalBookings";
-            this.lblTotalBookings.Size = new System.Drawing.Size(240, 45);
+            this.lblTotalBookings.Size = new System.Drawing.Size(340, 50);
             this.lblTotalBookings.TabIndex = 1;
             this.lblTotalBookings.Text = "0";
             this.lblTotalBookings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,11 +213,11 @@ namespace HorizonBookingSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(10, 10);
+            this.label4.Location = new System.Drawing.Point(15, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 20);
+            this.label4.Size = new System.Drawing.Size(117, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "Total Bookings";
             // 
@@ -226,18 +226,18 @@ namespace HorizonBookingSystem
             this.panelCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.panelCard1.Controls.Add(this.lblTotalUsers);
             this.panelCard1.Controls.Add(this.label2);
-            this.panelCard1.Location = new System.Drawing.Point(30, 30);
+            this.panelCard1.Location = new System.Drawing.Point(30, 51);
             this.panelCard1.Name = "panelCard1";
-            this.panelCard1.Size = new System.Drawing.Size(260, 90);
+            this.panelCard1.Size = new System.Drawing.Size(360, 100);
             this.panelCard1.TabIndex = 0;
             // 
             // lblTotalUsers
             // 
-            this.lblTotalUsers.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalUsers.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalUsers.ForeColor = System.Drawing.Color.White;
-            this.lblTotalUsers.Location = new System.Drawing.Point(10, 35);
+            this.lblTotalUsers.Location = new System.Drawing.Point(10, 40);
             this.lblTotalUsers.Name = "lblTotalUsers";
-            this.lblTotalUsers.Size = new System.Drawing.Size(240, 45);
+            this.lblTotalUsers.Size = new System.Drawing.Size(340, 50);
             this.lblTotalUsers.TabIndex = 1;
             this.lblTotalUsers.Text = "0";
             this.lblTotalUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -245,11 +245,11 @@ namespace HorizonBookingSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(10, 10);
+            this.label2.Location = new System.Drawing.Point(15, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(89, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Users";
             // 
@@ -258,7 +258,7 @@ namespace HorizonBookingSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(614, 450);
+            this.ClientSize = new System.Drawing.Size(803, 588);
             this.Controls.Add(this.panelStats);
             this.Controls.Add(this.panelHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
