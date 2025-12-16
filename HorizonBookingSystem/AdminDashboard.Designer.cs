@@ -241,6 +241,7 @@ namespace HorizonBookingSystem
             this.lblTotalUsers.TabIndex = 1;
             this.lblTotalUsers.Text = "0";
             this.lblTotalUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotalUsers.Click += new System.EventHandler(this.lblTotalUsers_Click);
             // 
             // label2
             // 

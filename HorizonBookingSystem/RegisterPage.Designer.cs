@@ -78,7 +78,7 @@ namespace HorizonBookingSystem
             this.txtBoxEmail.BackColor = System.Drawing.Color.White;
             this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEmail.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtBoxEmail.Location = new System.Drawing.Point(12, 10);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(296, 20);
@@ -102,12 +102,13 @@ namespace HorizonBookingSystem
             this.txtBoxPassword.BackColor = System.Drawing.Color.White;
             this.txtBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtBoxPassword.Location = new System.Drawing.Point(12, 10);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Size = new System.Drawing.Size(296, 20);
             this.txtBoxPassword.TabIndex = 1;
             this.txtBoxPassword.Text = "Password";
+            this.txtBoxPassword.TextChanged += new System.EventHandler(this.txtBoxPassword_TextChanged);
             this.txtBoxPassword.Enter += new System.EventHandler(this.txtBoxPassword_Enter);
             this.txtBoxPassword.Leave += new System.EventHandler(this.txtBoxPassword_Leave);
             // 
@@ -126,7 +127,7 @@ namespace HorizonBookingSystem
             this.txtBoxUsername.BackColor = System.Drawing.Color.White;
             this.txtBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUsername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtBoxUsername.Location = new System.Drawing.Point(12, 10);
             this.txtBoxUsername.Name = "txtBoxUsername";
             this.txtBoxUsername.Size = new System.Drawing.Size(296, 20);

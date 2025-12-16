@@ -24,7 +24,6 @@ namespace HorizonBookingSystem
             if (txtBoxUsername.Text == "Username")
             {
                 txtBoxUsername.Text = "";
-                txtBoxUsername.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
             }
         }
 
@@ -33,7 +32,6 @@ namespace HorizonBookingSystem
             if (string.IsNullOrWhiteSpace(txtBoxUsername.Text))
             {
                 txtBoxUsername.Text = "Username";
-                txtBoxUsername.ForeColor = System.Drawing.Color.Gray;
             }
         }
 
@@ -42,8 +40,6 @@ namespace HorizonBookingSystem
             if (txtBoxPassword.Text == "Password")
             {
                 txtBoxPassword.Text = "";
-                txtBoxPassword.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
-                txtBoxPassword.PasswordChar = '●';
             }
         }
 
@@ -53,7 +49,6 @@ namespace HorizonBookingSystem
             {
                 txtBoxPassword.PasswordChar = '\0';
                 txtBoxPassword.Text = "Password";
-                txtBoxPassword.ForeColor = System.Drawing.Color.Gray;
             }
         }
 
@@ -62,7 +57,6 @@ namespace HorizonBookingSystem
             if (txtBoxEmail.Text == "Email")
             {
                 txtBoxEmail.Text = "";
-                txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(41, 128, 185);
             }
         }
 
@@ -71,7 +65,6 @@ namespace HorizonBookingSystem
             if (string.IsNullOrWhiteSpace(txtBoxEmail.Text))
             {
                 txtBoxEmail.Text = "Email";
-                txtBoxEmail.ForeColor = System.Drawing.Color.Gray;
             }
         }
 
@@ -156,6 +149,11 @@ namespace HorizonBookingSystem
             
             new Loginpage().Show();
             this.Hide();
+        }
+
+        private void txtBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

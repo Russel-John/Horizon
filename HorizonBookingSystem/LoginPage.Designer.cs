@@ -49,12 +49,13 @@ namespace HorizonBookingSystem
             this.txtBoxUsername.BackColor = System.Drawing.Color.White;
             this.txtBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUsername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtBoxUsername.Location = new System.Drawing.Point(12, 10);
             this.txtBoxUsername.Name = "txtBoxUsername";
             this.txtBoxUsername.Size = new System.Drawing.Size(296, 20);
             this.txtBoxUsername.TabIndex = 0;
             this.txtBoxUsername.Text = "Username";
+            this.txtBoxUsername.TextChanged += new System.EventHandler(this.txtBoxUsername_TextChanged);
             this.txtBoxUsername.Enter += new System.EventHandler(this.txtBoxUsername_Enter);
             this.txtBoxUsername.Leave += new System.EventHandler(this.txtBoxUsername_Leave);
             // 
@@ -63,7 +64,7 @@ namespace HorizonBookingSystem
             this.txtBoxPassword.BackColor = System.Drawing.Color.White;
             this.txtBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtBoxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.txtBoxPassword.Location = new System.Drawing.Point(12, 10);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Size = new System.Drawing.Size(296, 20);

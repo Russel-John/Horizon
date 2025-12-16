@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace HorizonBookingSystem
 {
@@ -137,10 +139,28 @@ namespace HorizonBookingSystem
                 }
             }
         }
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Regular expression pattern for email validation
+                string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (UserloggedIn == null) return;
+
+            string email = txtEmail.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(txtUsername.Text) || 
                 string.IsNullOrWhiteSpace(txtPassword.Text) || 
@@ -149,12 +169,19 @@ namespace HorizonBookingSystem
                 MessageBox.Show("All fields are required.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Please enter a valid email address (e.g., user@example.com).", "Invalid Email Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return;
+            }
 
             var userInDb = db.Users.FirstOrDefault(u => u.userID == UserloggedIn.userID);
             if (userInDb != null)
             {
                 userInDb.username = txtUsername.Text.Trim();
-                userInDb.email = txtEmail.Text.Trim();
+                userInDb.email = email;
                 userInDb.password = txtPassword.Text;
 
                 db.SaveChanges();
@@ -172,6 +199,11 @@ namespace HorizonBookingSystem
         private void label3_Click(object sender, EventArgs e) { }
 
         private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabProfile_Click(object sender, EventArgs e)
         {
 
         }

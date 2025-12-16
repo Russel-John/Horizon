@@ -69,5 +69,10 @@ namespace HorizonBookingSystem
         {
 
         }
+
+        private void lblTotalUsers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
