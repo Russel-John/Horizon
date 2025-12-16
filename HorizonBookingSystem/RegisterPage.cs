@@ -40,6 +40,7 @@ namespace HorizonBookingSystem
             if (txtBoxPassword.Text == "Password")
             {
                 txtBoxPassword.Text = "";
+                txtBoxPassword.PasswordChar = '●';
             }
         }
 
@@ -74,7 +75,6 @@ namespace HorizonBookingSystem
             this.Hide();
         }
 
-        // Helper method to validate email format
         private bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -82,7 +82,6 @@ namespace HorizonBookingSystem
 
             try
             {
-                // Regular expression pattern for email validation
                 string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
                 return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
             }
@@ -98,43 +97,46 @@ namespace HorizonBookingSystem
             string password = txtBoxPassword.Text;
             string email = txtBoxEmail.Text;
 
+            if ((username == "Username" || string.IsNullOrWhiteSpace(username)) && 
+                (password == "Password" || string.IsNullOrWhiteSpace(password)) && 
+                (email == "Email" || string.IsNullOrWhiteSpace(email)))
+            {
+                MessageBox.Show("Please enter all the required fields.", "Missing fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (username == "Username" || string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Please enter your username.", "Username Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtBoxUsername.Focus();
+                MessageBox.Show("Please enter your username.", "Missing field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (password == "Password" || string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Please enter your password.", "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtBoxPassword.Focus();
+                MessageBox.Show("Please enter your password.", "Missing field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (email == "Email" || string.IsNullOrWhiteSpace(email))
             {
-                MessageBox.Show("Please enter your email.", "Email Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtBoxEmail.Focus();
+                MessageBox.Show("Please enter your email.", "Missing field", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Validate email format
             if (!IsValidEmail(email))
             {
-                MessageBox.Show("Please enter a valid email address (e.g., user@example.com).", "Invalid Email Format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtBoxEmail.Focus();
+                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var existingUser = db.Users.Where(u => u.username.Equals(username)).FirstOrDefault();
+            var existingUser = db.Users.FirstOrDefault(u => u.username == username);
             if (existingUser != null)
             {
-                MessageBox.Show("Username already exists. Please choose a different username.", "Username Taken", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Username already exists.", "Username Taken", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            Users newUser = new Users
+            var newUser = new Users
             {
                 username = username,
                 password = password,
@@ -145,7 +147,7 @@ namespace HorizonBookingSystem
             db.Users.Add(newUser);
             db.SaveChanges();
             
-            MessageBox.Show("Registration Successful! You can now login with your credentials.", "Registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("User registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             new Loginpage().Show();
             this.Hide();

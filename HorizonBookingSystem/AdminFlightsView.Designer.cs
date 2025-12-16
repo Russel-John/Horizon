@@ -55,17 +55,27 @@
             // 
             this.dgvFlights.AllowUserToAddRows = false;
             this.dgvFlights.AllowUserToDeleteRows = false;
+            this.dgvFlights.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.dgvFlights.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFlights.BackgroundColor = System.Drawing.Color.White;
             this.dgvFlights.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFlights.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFlights.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.dgvFlights.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvFlights.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvFlights.ColumnHeadersHeight = 40;
+            this.dgvFlights.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvFlights.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.dgvFlights.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dgvFlights.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFlights.EnableHeadersVisualStyles = false;
             this.dgvFlights.Location = new System.Drawing.Point(0, 132);
             this.dgvFlights.Name = "dgvFlights";
             this.dgvFlights.ReadOnly = true;
+            this.dgvFlights.RowTemplate.Height = 35;
             this.dgvFlights.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFlights.Size = new System.Drawing.Size(803, 396);
             this.dgvFlights.TabIndex = 3;
+            this.dgvFlights.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFlights_CellContentClick);
             this.dgvFlights.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFlights_CellDoubleClick);
             // 
             // lblTitle

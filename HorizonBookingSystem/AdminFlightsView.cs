@@ -51,32 +51,8 @@ namespace HorizonBookingSystem
                 }
 
                 dgvFlights.DataSource = dataTable;
-
-                // Format the DataGridView
-                if (dgvFlights.Columns.Count > 0)
-                {
-                    // Set column widths
-                    dgvFlights.Columns["Flight ID"].Width = 80;
-                    dgvFlights.Columns["Departure"].Width = 120;
-                    dgvFlights.Columns["Destination"].Width = 120;
-                    dgvFlights.Columns["Flight Date"].Width = 100;
-                    dgvFlights.Columns["Flight Time"].Width = 100;
-                    dgvFlights.Columns["Price"].Width = 100;
-
-                    // Format headers
-                    dgvFlights.EnableHeadersVisualStyles = false;
-                    dgvFlights.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185);
-                    dgvFlights.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                    dgvFlights.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                    dgvFlights.ColumnHeadersHeight = 40;
-
-                    // Format rows
-                    dgvFlights.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
-                    dgvFlights.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
-                    dgvFlights.DefaultCellStyle.SelectionForeColor = Color.White;
-                    dgvFlights.RowTemplate.Height = 35;
-                }
-
+                ConfigureDataGridColumns();
+                
                 lblTotalFlights.Text = $"Total Flights: {flights.Count}";
             }
             catch (Exception ex)
@@ -85,14 +61,26 @@ namespace HorizonBookingSystem
             }
         }
 
+        private void ConfigureDataGridColumns()
+        {
+            if (dgvFlights.Columns.Count > 0)
+            {
+                dgvFlights.Columns["Flight ID"].Width = 80;
+                dgvFlights.Columns["Departure"].Width = 120;
+                dgvFlights.Columns["Destination"].Width = 120;
+                dgvFlights.Columns["Flight Date"].Width = 100;
+                dgvFlights.Columns["Flight Time"].Width = 100;
+                dgvFlights.Columns["Price"].Width = 100;
+            }
+        }
+
         private void PopulateFilters()
         {
             var flights = db.Flights.ToList();
 
-            // Populate departure cities
             cmBoxFrom.Items.Clear();
             cmBoxFrom.Items.Add("All Departures");
-
+            
             var departures = flights.Select(f => f.Departure).Distinct().OrderBy(d => d).ToList();
             foreach (var departure in departures)
             {
@@ -101,10 +89,9 @@ namespace HorizonBookingSystem
             }
             cmBoxFrom.SelectedIndex = 0;
 
-            // Populate destination cities
             cmBoxTo.Items.Clear();
             cmBoxTo.Items.Add("All Destinations");
-
+            
             var destinations = flights.Select(f => f.Destination).Distinct().OrderBy(d => d).ToList();
             foreach (var destination in destinations)
             {
@@ -113,7 +100,6 @@ namespace HorizonBookingSystem
             }
             cmBoxTo.SelectedIndex = 0;
 
-            // Populate sort options
             cmBoxSort.Items.Clear();
             cmBoxSort.Items.Add("No Sort");
             cmBoxSort.Items.Add("Latest");
@@ -208,6 +194,8 @@ namespace HorizonBookingSystem
                 }
 
                 dgvFlights.DataSource = dataTable;
+                ConfigureDataGridColumns();
+                
                 lblTotalFlights.Text = $"Total Flights: {flights.Count}";
             }
             catch (Exception ex)
@@ -355,7 +343,7 @@ namespace HorizonBookingSystem
             {
                 try
                 {
-                    // Delete related records first
+                    // Delete related records
                     var bookingSeats = db.BookingSeats.Where(bs => bs.Bookings.FlightID == flightId).ToList();
                     foreach (var bs in bookingSeats)
                     {
@@ -386,6 +374,11 @@ namespace HorizonBookingSystem
                     MessageBox.Show($"Error deleting flight: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void dgvFlights_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

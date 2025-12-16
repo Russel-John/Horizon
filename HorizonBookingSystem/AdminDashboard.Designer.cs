@@ -91,6 +91,7 @@ namespace HorizonBookingSystem
             this.panelStats.Padding = new System.Windows.Forms.Padding(20);
             this.panelStats.Size = new System.Drawing.Size(803, 488);
             this.panelStats.TabIndex = 1;
+            this.panelStats.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStats_Paint);
             // 
             // panelCard5
             // 

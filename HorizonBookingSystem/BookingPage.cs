@@ -41,6 +41,8 @@ namespace HorizonBookingSystem
             {
                 LblUsername.Text = $"User: {userLoggedIn.username}";
             }
+
+            CalculateAndDisplayTotalPrice();
         }
 
         private void LblDestination_Click(object sender, EventArgs e)

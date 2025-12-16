@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -30,21 +29,6 @@ namespace HorizonBookingSystem
 
         private void SeatSelectionPage_Load(object sender, EventArgs e)
         {
-            // Add null checks
-            if (selectedFlight == null)
-            {
-                MessageBox.Show("No flight selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-                return;
-            }
-
-            if (userLoggedIn == null)
-            {
-                MessageBox.Show("No user logged in!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-                return;
-            }
-
             LoadFlightInfo();
             LoadSeats();
         }
@@ -58,23 +42,19 @@ namespace HorizonBookingSystem
 
         private void LoadSeats()
         {
-            // Get seats for this flight from database
             var seats = db.Seats.Where(s => s.FlightID == selectedFlight.FlightID).ToList();
 
-            // If no seats exist, create them
             if (seats.Count == 0)
             {
                 CreateSeatsForFlight();
                 seats = db.Seats.Where(s => s.FlightID == selectedFlight.FlightID).ToList();
             }
 
-            // Create seat buttons in grid layout
             CreateSeatButtons(seats);
         }
 
         private void CreateSeatsForFlight()
         {
-            // Create seats in format: A1, A2, A3... B1, B2, B3... etc.
             for (int row = 0; row < ROWS; row++)
             {
                 char rowLetter = (char)('A' + row);
@@ -95,15 +75,8 @@ namespace HorizonBookingSystem
 
         private void CreateSeatButtons(List<Seats> seats)
         {
-            // Clear existing controls
             panelSeats.Controls.Clear();
 
-            // Configure panel for grid layout
-            panelSeats.AutoScroll = true;
-            panelSeats.BackColor = Color.White;
-            panelSeats.BorderStyle = BorderStyle.FixedSingle;
-
-            // Create TableLayoutPanel for grid
             TableLayoutPanel seatGrid = new TableLayoutPanel
             {
                 RowCount = ROWS,
@@ -113,7 +86,6 @@ namespace HorizonBookingSystem
                 CellBorderStyle = TableLayoutPanelCellBorderStyle.None
             };
 
-            // Set equal column and row sizes
             for (int i = 0; i < COLS; i++)
             {
                 seatGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / COLS));
@@ -123,7 +95,6 @@ namespace HorizonBookingSystem
                 seatGrid.RowStyles.Add(new RowStyle(SizeType.Percent, 100F / ROWS));
             }
 
-            // Create buttons for each seat
             for (int row = 0; row < ROWS; row++)
             {
                 char rowLetter = (char)('A' + row);
@@ -145,10 +116,8 @@ namespace HorizonBookingSystem
                         Cursor = Cursors.Hand
                     };
 
-                    // Set color based on booking status
                     if (seat.IsBooked == true)
                     {
-                        // Booked seat - cannot be selected
                         btnSeat.BackColor = Color.Gray;
                         btnSeat.ForeColor = Color.White;
                         btnSeat.Enabled = false;
@@ -156,7 +125,6 @@ namespace HorizonBookingSystem
                     }
                     else
                     {
-                        // Available seat
                         btnSeat.BackColor = Color.LightGreen;
                         btnSeat.ForeColor = Color.Black;
                         btnSeat.Enabled = true;
@@ -164,17 +132,13 @@ namespace HorizonBookingSystem
 
                     btnSeat.FlatAppearance.BorderSize = 2;
                     btnSeat.FlatAppearance.BorderColor = Color.DarkGray;
-
                     btnSeat.Click += SeatButton_Click;
 
-                    // Add button to grid at correct position
                     seatGrid.Controls.Add(btnSeat, col - 1, row);
                 }
             }
 
-            // Add the grid to the panel
             panelSeats.Controls.Add(seatGrid);
-            
         }
 
         private void SeatButton_Click(object sender, EventArgs e)
@@ -184,26 +148,18 @@ namespace HorizonBookingSystem
 
             if (selectedSeats.Contains(seat.SeatNumber))
             {
-                // Deselect seat
                 selectedSeats.Remove(seat.SeatNumber);
                 btnSeat.BackColor = Color.LightGreen;
                 btnSeat.ForeColor = Color.Black;
             }
             else if (selectedSeats.Count < numberOfTickets)
             {
-                // Select seat
                 selectedSeats.Add(seat.SeatNumber);
                 btnSeat.BackColor = Color.Blue;
                 btnSeat.ForeColor = Color.White;
-
-                if (selectedSeats.Count == numberOfTickets)
-                {
-                    MessageBox.Show("Maximum seats reached, cannot book more seats.", "Booking Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
             else
             {
-                // Max tickets reached
                 MessageBox.Show($"You cannot select more than {numberOfTickets} seats.", "Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
@@ -222,34 +178,8 @@ namespace HorizonBookingSystem
             }
         }
 
-        private void panelSeats_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblSelectedSeats_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTicketInfo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFlightInfo_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfirmBooking_Click(object sender, EventArgs e)
         {
-            if (selectedSeats.Count == 0)
-            {
-                MessageBox.Show("No seats booked yet.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (selectedSeats.Count != numberOfTickets)
             {
                 MessageBox.Show($"Please select exactly {numberOfTickets} seat(s).", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -258,7 +188,6 @@ namespace HorizonBookingSystem
 
             try
             {
-                // Create booking
                 var booking = new Bookings
                 {
                     UserID = userLoggedIn.userID,
@@ -271,27 +200,23 @@ namespace HorizonBookingSystem
                 db.Bookings.Add(booking);
                 db.SaveChanges();
 
-                // Mark seats as booked and create BookingSeats records
                 foreach (string seatNumber in selectedSeats)
                 {
                     var seat = db.Seats.FirstOrDefault(s => s.FlightID == selectedFlight.FlightID && s.SeatNumber == seatNumber);
-                    if (seat != null)
-                    {
-                        seat.IsBooked = true;
-                        seat.BookingID = booking.BookingID;
+                    seat.IsBooked = true;
+                    seat.BookingID = booking.BookingID;
 
-                        var bookingSeat = new BookingSeats
-                        {
-                            BookingID = booking.BookingID,
-                            SeatID = seat.SeatID
-                        };
-                        db.BookingSeats.Add(bookingSeat);
-                    }
+                    var bookingSeat = new BookingSeats
+                    {
+                        BookingID = booking.BookingID,
+                        SeatID = seat.SeatID
+                    };
+                    db.BookingSeats.Add(bookingSeat);
                 }
 
                 db.SaveChanges();
 
-                MessageBox.Show($"Booking Confirmed!\n\nBooking ID: {booking.BookingID}\nSeats: {string.Join(" ", selectedSeats.OrderBy(s => s))}\nTotal: {totalPrice:C}\n\nThank you, {userLoggedIn.username}!",
+                MessageBox.Show($"Booking Confirmed!\n\nBooking ID: {booking.BookingID}\nSeats: {string.Join(" ", selectedSeats.OrderBy(s => s))}\nTotal: {totalPrice:C}",
                     "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
@@ -304,19 +229,18 @@ namespace HorizonBookingSystem
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Are you sure you want to cancel the booking?", "Cancel Booking",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var result = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 this.Close();
             }
         }
 
-        private void PanelTitle_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        private void panelSeats_Paint(object sender, PaintEventArgs e) { }
+        private void lblSelectedSeats_Click(object sender, EventArgs e) { }
+        private void lblTicketInfo_Click(object sender, EventArgs e) { }
+        private void lblFlightInfo_Click(object sender, EventArgs e) { }
+        private void PanelTitle_Paint(object sender, PaintEventArgs e) { }
     }
 }
 
