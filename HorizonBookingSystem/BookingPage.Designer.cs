@@ -227,6 +227,7 @@
             this.panelFooter.Padding = new System.Windows.Forms.Padding(25, 15, 25, 15);
             this.panelFooter.Size = new System.Drawing.Size(598, 83);
             this.panelFooter.TabIndex = 2;
+            this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
             // btnConfirm
             // 
